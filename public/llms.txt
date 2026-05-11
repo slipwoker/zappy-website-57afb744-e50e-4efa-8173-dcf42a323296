@@ -1,0 +1,54 @@
+# Gentleman’s Chair — Generative Engine Optimization Map
+
+> A barber shop business looking to establish an online presence through a promotional landing page. No additional details about the shop's unique identity, atmosphere, or specialties have been provided yet.
+
+---
+
+## Pages
+
+### Home
+https://example.com
+A barber shop business looking to establish an online presence through a promotional landing page. No additional details about the shop&#39;s unique identity, atmos
+
+## Legal & Policy
+
+### Privacy Policy
+https://example.com/privacy
+Information about how user data is collected, stored, and protected.
+
+### Terms & Conditions
+https://example.com/terms
+Legal terms describing service usage, rights, and policies.
+
+### Accessibility Statement
+https://example.com/accessibility
+Information about WCAG compliance and accessibility features.
+
+---
+
+## How to Contact Us
+
+- (No contact details configured yet.)
+
+---
+
+# Business Context (for LLM understanding)
+
+## About Gentleman’s Chair
+A barber shop business looking to establish an online presence through a promotional landing page. No additional details about the shop's unique identity, atmosphere, or specialties have been provided yet.
+
+## Target Audience
+- Young Professional Men
+- Grooming Enthusiasts
+- Beard Care Advocates
+
+## Industry
+grooming & personal care
+
+---
+
+# Machine-readable feeds
+
+- Sitemap (XML): https://example.com/sitemap.xml
+- Robots: https://example.com/robots.txt
+- Flattened page text (for LLMs): https://example.com/llms-full.txt
