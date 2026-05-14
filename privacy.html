@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -223,6 +223,8 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Privacy Policy">
     <meta name="twitter:description" content="Our privacy policy - how we collect, use, and protect your information">
+    <title data-i18n="privacy_page_title">Privacy Policy</title>
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     
@@ -234,16 +236,861 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;display=swap">
     <style>
-    .skip-link { position: absolute; left: -9999px; top: 0; padding: 12px 18px; background: var(--bg-dark, #1a1a1a); color: var(--text-light, #fff); font-weight: 600; border-radius: 0 0 8px 0; z-index: 10000; }
-    .skip-link:focus { left: 0; outline: 2px solid var(--ring, #fff); outline-offset: 2px; }
+    .skip-link { position: absolute; transform: translateY(-200%); left: 0; top: 0; padding: 12px 18px; background: var(--bg-dark, #1a1a1a); color: var(--text-light, #fff); font-weight: 600; border-radius: 0 0 8px 0; z-index: 10000; }
+    .skip-link:focus { transform: none; outline: 2px solid var(--ring, #fff); outline-offset: 2px; }
     :focus-visible { outline: 2px solid var(--ring, currentColor); outline-offset: 3px; }
   </style>
     
     <!-- Cookie Consent -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.css">
     <script src="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.umd.js"></script>
     <!-- Mickidum Accessibility Toolbar -->
     <script src="https://cdn.jsdelivr.net/gh/mickidum/acc_toolbar/acctoolbar/acctoolbar.min.js"></script>
+
+    <!-- Iconify for cross-platform flag icons -->
+    <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script><style id="zappy-multilang-css">
+/* ============================================
+   DIRECTION OVERRIDE STYLES
+   Only set direction property, NOT text-align
+   This preserves centered elements
+   ============================================ */
+
+/* Base direction for LTR */
+html[dir="ltr"], html[dir="ltr"] body {
+  direction: ltr !important;
+}
+
+html[dir="ltr"] main,
+html[dir="ltr"] article,
+html[dir="ltr"] section,
+html[dir="ltr"] .content,
+html[dir="ltr"] .container,
+html[dir="ltr"] .wrapper {
+  direction: ltr !important;
+}
+
+/* ONLY apply text-align to legal page content that needs LTR alignment */
+html[dir="ltr"] .legal-content,
+html[dir="ltr"] .terms-content,
+html[dir="ltr"] .privacy-content,
+html[dir="ltr"] .legal-content p,
+html[dir="ltr"] .terms-content p,
+html[dir="ltr"] .privacy-content p,
+html[dir="ltr"] .legal-content li,
+html[dir="ltr"] .terms-content li,
+html[dir="ltr"] .privacy-content li {
+  direction: ltr !important;
+  text-align: left !important;
+}
+
+/* ZAPPY-LTR-TEXTALIGN-OVERRIDES:BEGIN */
+/* ============================================
+   LTR TEXT-ALIGN OVERRIDES FOR RTL-BAKED CONTENT
+   See block comment at top of multiLanguageService.js for full rationale.
+   Patterns covered:
+   - *-card-content / *-card-text  → e-commerce + collections card bodies
+   - *-content-column              → split / two-column section bodies
+   - contact form grid/card blocks → contact form two-column sections
+   - *-info-item / .suggestion-item → contact-form widgets
+   - .order-success-card           → checkout success card
+   - .privacy-consent-label        → contact-form consent checkbox row
+   - .text-left                    → AI sometimes literally writes
+                                     ".text-left { text-align: right }" in
+                                     Hebrew sites — flip it so the class
+                                     name matches its behaviour.
+   Uses text-align: start (resolves to left in LTR, right in RTL via the
+   CSS spec) for the structural patterns; .text-left is forced literally
+   to left because its name is a contract.
+   ============================================ */
+html[dir="ltr"] [class*="-card-content"],
+html[dir="ltr"] [class*="-card-text"],
+html[dir="ltr"] [class*="-content-column"],
+html[dir="ltr"] .suggestion-item,
+html[dir="ltr"] .contact-info-item,
+html[dir="ltr"] .order-success-card {
+  text-align: start !important;
+}
+
+html[dir="ltr"] .text-left {
+  text-align: left !important;
+}
+
+/* Contact form columns/cards are often baked with direction: rtl. In LTR this
+   reverses the grid column placement and moves punctuation to the wrong side
+   of headings (e.g. "?What should you tell us"). */
+html[dir="ltr"] .contact-form-grid,
+html[dir="ltr"] .contact-form-container,
+html[dir="ltr"] .form-card,
+html[dir="ltr"] .reassurance-card,
+html[dir="ltr"] .suggestion-list {
+  direction: ltr !important;
+  text-align: left !important;
+}
+
+html[dir="ltr"] .suggestion-item,
+html[dir="ltr"] .contact-info-item {
+  direction: ltr !important;
+  text-align: left !important;
+  justify-content: flex-start !important;
+}
+
+/* Consent labels are often baked with direction: rtl so the checkbox renders
+   on the right. In LTR the checkbox is the first DOM child and should render
+   on the left, before the translated agreement text. */
+html[dir="ltr"] .privacy-consent-label {
+  direction: ltr !important;
+  text-align: left !important;
+}
+
+/* Form inputs the AI baked with both `direction: rtl` AND `text-align:
+   right` on contact pages — for LTR visitors the cursor + placeholder must
+   read left-to-right, otherwise typing an English email puts the @ on the
+   wrong side of the input. */
+html[dir="ltr"] .contact-contact-form-section .form-group input,
+html[dir="ltr"] .contact-contact-form-section .form-group textarea {
+  direction: ltr !important;
+  text-align: left !important;
+}
+
+/* Solution / service sections baked with direction: rtl — in LTR the text
+   reads backwards (period on the left, right-aligned paragraphs). */
+html[dir="ltr"] .solution-content,
+html[dir="ltr"] .solution-item,
+html[dir="ltr"] .service-detail-content,
+html[dir="ltr"] .service-detail,
+html[dir="ltr"] .solutions-showcase,
+html[dir="ltr"] [class*="solutions-grid"],
+html[dir="ltr"] [class*="solution-description"],
+html[dir="ltr"] [class*="solution-text"] {
+  direction: ltr !important;
+  text-align: left !important;
+}
+/* ZAPPY-LTR-TEXTALIGN-OVERRIDES:END */
+
+/* Base direction for RTL */
+html[dir="rtl"], html[dir="rtl"] body {
+  direction: rtl !important;
+}
+
+html[dir="rtl"] main,
+html[dir="rtl"] article,
+html[dir="rtl"] section,
+html[dir="rtl"] .content,
+html[dir="rtl"] .container,
+html[dir="rtl"] .wrapper {
+  direction: rtl !important;
+}
+
+/* ONLY apply text-align to legal page content that needs RTL alignment */
+html[dir="rtl"] .legal-content,
+html[dir="rtl"] .terms-content,
+html[dir="rtl"] .privacy-content,
+html[dir="rtl"] .legal-content p,
+html[dir="rtl"] .terms-content p,
+html[dir="rtl"] .privacy-content p,
+html[dir="rtl"] .legal-content li,
+html[dir="rtl"] .terms-content li,
+html[dir="rtl"] .privacy-content li {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+
+/* ============================================
+   V2 NAVIGATION FIX
+   CRITICAL: For V2 sites created in RTL (Hebrew), the nav elements
+   inherit direction:rtl from the body. This reverses how flex order
+   is interpreted. For LTR pages, we MUST set direction:ltr on nav
+   containers to make the flex order work correctly.
+   
+   This section is ONLY included for V2 sites (detected by nav-right-group
+   or nav-cta-container classes) to avoid affecting V1 site layouts.
+   ============================================ */
+
+/* Fix V2 navbar layout for LTR pages */
+/* Direction must apply to all screen sizes, but flex-direction: row is desktop-only */
+/* Scoped to .navbar (see equivalent block in generateStaticPageLayoutFixCSS
+   for the breadcrumb / catalog-menu collateral damage rationale). */
+html[dir="ltr"] header.navbar,
+html[dir="ltr"] nav.navbar,
+html[dir="ltr"] .navbar,
+html[dir="ltr"] .nav-container {
+  direction: ltr !important;
+}
+
+html[dir="ltr"] .nav-right-group {
+  direction: ltr !important;
+  order: -1 !important;
+}
+
+html[dir="ltr"] .nav-cta-container {
+  direction: ltr !important;
+  order: 1 !important;
+  margin-left: auto !important;
+}
+
+html[dir="ltr"] .nav-menu,
+html[dir="ltr"] #navMenu {
+  direction: ltr !important;
+}
+
+html[dir="ltr"] .nav-brand {
+  direction: ltr !important;
+  order: -1 !important;
+}
+
+/* DESKTOP ONLY: Horizontal flex layout for navbar elements */
+/* Scoped to .navbar — see equivalent block above for full rationale. */
+@media (min-width: 769px) {
+  html[dir="ltr"] header.navbar,
+  html[dir="ltr"] nav.navbar,
+  html[dir="ltr"] .navbar,
+  html[dir="ltr"] .nav-container {
+    flex-direction: row !important;
+  }
+  
+  html[dir="ltr"] .nav-right-group,
+  html[dir="ltr"] .nav-cta-container {
+    flex-direction: row !important;
+  }
+  
+  html[dir="ltr"] .nav-menu,
+  html[dir="ltr"] #navMenu {
+    flex-direction: row !important;
+  }
+
+  /* V2 ecommerce sites set justify-content: space-between on nav-right-group,
+     which distributes logo, menu, and icons evenly across the full width.
+     In LTR mode, this pushes the menu away from the logo into the center.
+     Override to flex-start so menu items sit immediately after the logo,
+     and push the ecommerce icons to the right with margin-left: auto. */
+  html[dir="ltr"] .nav-right-group {
+    justify-content: flex-start !important;
+  }
+  html[dir="ltr"] .nav-right-group .nav-ecommerce-icons {
+    margin-left: auto !important;
+    margin-right: 0 !important;
+  }
+
+  /* E-commerce layout WITH nav-right-group wrapper:
+     The base RTL CSS uses flex-direction: row-reverse with order values
+     (brand:2, menu:1, icons:0). In LTR we flip to row and must re-assign
+     order so items flow: brand, menu, icons (left to right). The menu wraps
+     overflow links downward while its first row stays aligned with the logo. */
+  html[dir="ltr"] .nav-right-group > .nav-brand {
+    order: -1 !important;
+  }
+  html[dir="ltr"] .nav-right-group > .nav-menu,
+  html[dir="ltr"] .nav-right-group > #navMenu {
+    order: 0 !important;
+    margin-inline-start: 0 !important;
+    margin-inline-end: 24px !important;
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    max-height: 44px !important;
+    overflow: visible !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    align-content: flex-start !important;
+    row-gap: 4px !important;
+  }
+  html[dir="ltr"] .nav-right-group > .nav-menu > li,
+  html[dir="ltr"] .nav-right-group > #navMenu > li {
+    flex: 0 0 auto !important;
+  }
+  html[dir="ltr"] .nav-right-group > .nav-ecommerce-icons {
+    order: 2 !important;
+    margin-inline-start: auto !important;
+    flex: 0 0 auto !important;
+    min-width: max-content !important;
+  }
+  html[dir="ltr"] .nav-right-group > .nav-ecommerce-icons.nav-icons-left {
+    order: 2 !important;
+    margin-inline-start: auto !important;
+    flex: 0 0 auto !important;
+    min-width: max-content !important;
+  }
+
+  /* E-commerce flat nav layout (no nav-right-group wrapper):
+     brand → menu → icons. Mirrors the runtime CSS from
+     ensureRuntimeCssInjected so layout is correct even before JS loads. */
+  html[dir="ltr"] .nav-container > .nav-brand {
+    order: -1 !important;
+  }
+  html[dir="ltr"] .nav-container > .nav-menu,
+  html[dir="ltr"] .nav-container > #navMenu {
+    order: 1 !important;
+    margin-inline-start: 0 !important;
+    margin-inline-end: 24px !important;
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    max-height: 44px !important;
+    overflow: visible !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    align-content: flex-start !important;
+    row-gap: 4px !important;
+  }
+  html[dir="ltr"] .nav-container > .nav-menu > li,
+  html[dir="ltr"] .nav-container > #navMenu > li {
+    flex: 0 0 auto !important;
+  }
+  html[dir="ltr"] .nav-container > .lang-switcher,
+  html[dir="ltr"] .nav-container > .nav-ecommerce-icons {
+    order: 2 !important;
+    margin-inline-start: auto !important;
+    flex: 0 0 auto !important;
+    min-width: max-content !important;
+  }
+  html[dir="ltr"] .nav-container > .nav-ecommerce-icons.nav-icons-left {
+    margin-inline-start: auto !important;
+    flex: 0 0 auto !important;
+    min-width: max-content !important;
+  }
+  html[dir="rtl"] .nav-right-group > .nav-menu,
+  html[dir="rtl"] .nav-right-group > #navMenu,
+  html[dir="rtl"] .nav-container > .nav-menu,
+  html[dir="rtl"] .nav-container > #navMenu {
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    max-height: 44px !important;
+    overflow: visible !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    align-content: flex-start !important;
+    row-gap: 4px !important;
+  }
+  html[dir="rtl"] .nav-right-group > .nav-menu > li,
+  html[dir="rtl"] .nav-right-group > #navMenu > li,
+  html[dir="rtl"] .nav-container > .nav-menu > li,
+  html[dir="rtl"] .nav-container > #navMenu > li {
+    flex: 0 0 auto !important;
+  }
+  html[dir="rtl"] .nav-right-group > .nav-ecommerce-icons,
+  html[dir="rtl"] .nav-right-group > .nav-ecommerce-icons.nav-icons-left,
+  html[dir="rtl"] .nav-container > .nav-ecommerce-icons,
+  html[dir="rtl"] .nav-container > .nav-ecommerce-icons.nav-icons-left {
+    flex: 0 0 auto !important;
+    min-width: max-content !important;
+  }
+}
+
+/* Search box button position fix for LTR pages.
+   RTL-generated sites bake the search button with "left: Xpx" (correct for RTL).
+   In LTR, the button must be on the right side to avoid overlapping the input text. */
+html[dir="ltr"] .nav-search-box {
+  direction: ltr !important;
+}
+html[dir="ltr"] .nav-search-btn {
+  position: absolute !important;
+  left: auto !important;
+  right: 4px !important;
+}
+html[dir="ltr"] .nav-search-input {
+  direction: ltr !important;
+  text-align: left !important;
+  padding-left: 14px !important;
+  padding-right: 40px !important;
+}
+html[dir="ltr"] .nav-search-results {
+  left: 0 !important;
+  right: auto !important;
+}
+
+
+/* Language Switcher Container - Fixed Position */
+.zappy-lang-switcher-container {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  z-index: 9999;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* RTL: Move to left side */
+html[dir="rtl"] .zappy-lang-switcher-container {
+  right: auto;
+  left: 12px;
+}
+
+/* Language Switcher Styles */
+.lang-switcher {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Language switcher positioning - minimal, only gap spacing */
+/* NOTE: Removed margin-left:auto rules that broke V2 layouts */
+/* V2 layouts handle positioning via flexbox, we just add small gap */
+header .lang-switcher,
+nav .lang-switcher,
+.navbar .lang-switcher {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.lang-switcher-current {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  color: inherit;
+  transition: opacity 0.2s ease;
+}
+
+.lang-switcher-current:hover {
+  opacity: 0.7;
+}
+
+/* ===========================================
+   LANGUAGE DROPDOWN POSITIONING
+   CRITICAL: position: absolute !important overrides any
+   mobile responsive CSS that resets absolute positioning
+   to relative. The dropdown MUST be absolutely positioned
+   relative to its parent .lang-switcher.
+   
+   HIGH SPECIFICITY SELECTORS needed to override:
+   [style*="position: absolute"]:not(...) { position: relative !important }
+   That selector has specificity ~0,4,0 so we need 0,5,0+ to win
+   =========================================== */
+.lang-switcher-dropdown,
+.lang-switcher .lang-switcher-dropdown,
+div.lang-switcher-dropdown,
+.nav-cta-container .lang-switcher .lang-switcher-dropdown,
+.navbar .nav-cta-container .lang-switcher-dropdown {
+  position: absolute !important;
+  top: 100% !important;
+  /* Default LTR: align dropdown's left edge to switcher's left edge */
+  left: 0;
+  right: auto;
+  margin-top: 6px;
+  min-width: 150px;
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: all 0.2s ease;
+  overflow: hidden;
+  z-index: 1002 !important;
+}
+
+/* Ultra-high specificity override for problematic mobile responsive CSS */
+/* The problematic rule [style*="position: absolute"]:not():not():not() has specificity 0,4,0 */
+/* We need 0,5,0+ to win, so we add extra class/attribute selectors */
+.lang-switcher .lang-switcher-dropdown[style*="position: absolute"],
+.lang-switcher .lang-switcher-dropdown[style*="position:absolute"],
+.nav-cta-container .lang-switcher .lang-switcher-dropdown[style],
+.navbar .nav-cta-container .lang-switcher-dropdown[style],
+div.lang-switcher > div.lang-switcher-dropdown[style] {
+  position: absolute !important;
+  top: 100% !important;
+  /* Default LTR: align to left */
+  left: 0;
+  right: auto;
+}
+
+.lang-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 12px 16px;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font-size: 14px;
+  color: #333 !important;
+  transition: background 0.15s ease;
+}
+
+.lang-switcher-dropdown .lang-option,
+.lang-switcher-dropdown .lang-option *,
+.navbar .lang-switcher-dropdown .lang-option,
+.navbar .lang-switcher-dropdown .lang-option *,
+.navbar .lang-option,
+.navbar .lang-option * {
+  color: #333 !important;
+}
+
+html[dir="rtl"] .lang-option {
+  text-align: right;
+}
+
+/* RTL: align dropdown's right edge to switcher's right edge */
+html[dir="rtl"] .lang-switcher-dropdown,
+html[lang="he"] .lang-switcher-dropdown,
+html[lang="ar"] .lang-switcher-dropdown {
+  right: 0;
+  left: auto;
+}
+
+.lang-option:hover {
+  background: #f5f5f5;
+}
+
+.lang-switcher-dropdown .lang-option:hover,
+.lang-switcher-dropdown .lang-option:hover *,
+.navbar .lang-switcher-dropdown .lang-option:hover,
+.navbar .lang-switcher-dropdown .lang-option:hover *,
+.navbar .lang-option:hover,
+.navbar .lang-option:hover * {
+  color: #111 !important;
+}
+.lang-switcher-dropdown .lang-option:hover,
+.navbar .lang-switcher-dropdown .lang-option:hover,
+.navbar .lang-option:hover {
+  background: #f5f5f5 !important;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  /* Hide desktop lang-switcher on mobile - hamburger menu handles it */
+  /* High specificity needed to override stored CSS: .nav-cta-container .lang-switcher { display: flex !important } */
+  .lang-switcher,
+  .nav-cta-container .lang-switcher,
+  .nav-container .lang-switcher,
+  .navbar .lang-switcher,
+  .navbar .nav-cta-container .lang-switcher,
+  .nav-icons-left .lang-switcher,
+  .nav-ecommerce-icons .lang-switcher {
+    display: none !important;
+  }
+  
+  .zappy-lang-switcher-container {
+    display: none !important;
+  }
+
+  
+  /* ===========================================
+     MOBILE LANGUAGE SUBMENU (inside hamburger)
+     =========================================== */
+  .mobile-lang-menu {
+    width: 100%;
+    border-top: 1px solid rgba(128, 128, 128, 0.15);
+    margin-top: 8px;
+    padding-top: 8px;
+  }
+  
+  .mobile-lang-toggle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 15px 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: inherit;
+    font-family: inherit;
+    font-weight: 500;
+    color: inherit;
+    text-align: left;
+  }
+  
+  html[dir="rtl"] .mobile-lang-toggle {
+    text-align: right;
+  }
+  
+  .mobile-lang-chevron {
+    margin-left: auto;
+    transition: transform 0.2s ease;
+    flex-shrink: 0;
+  }
+  
+  html[dir="rtl"] .mobile-lang-chevron {
+    margin-left: 0;
+    margin-right: auto;
+  }
+  
+  .mobile-lang-options {
+    display: none;
+    flex-direction: column;
+    padding: 0 0 8px 0;
+  }
+  
+  .mobile-lang-options.open {
+    display: flex !important;
+  }
+  
+  .mobile-lang-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 12px 30px 12px 50px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: inherit;
+    color: inherit;
+    text-align: left;
+    opacity: 0.85;
+    transition: opacity 0.15s ease;
+  }
+  
+  html[dir="rtl"] .mobile-lang-option {
+    text-align: right;
+    padding: 12px 50px 12px 30px;
+  }
+  
+  .mobile-lang-option:hover,
+  .mobile-lang-option:active {
+    opacity: 1;
+  }
+  
+  .mobile-lang-option img {
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+}
+
+/* ===========================================
+   RTL MOBILE HORIZONTAL OVERFLOW FIX
+   Prevents left whitespace gap in RTL mobile
+   caused by elements extending past viewport
+   =========================================== */
+
+/* Prevent horizontal scroll on RTL pages */
+/* Using 'clip' instead of 'hidden' to avoid breaking position:sticky */
+/* 'hidden' causes overflow-y to compute as 'auto', creating a scroll container */
+html[dir="rtl"],
+html[dir="rtl"] body {
+  overflow-x: clip !important;
+  max-width: 100vw !important;
+}
+
+/* Ensure carousel containers clip overflow to prevent horizontal scroll */
+.zappy-carousel-container,
+.zappy-carousel-wrapper,
+.benefits-section,
+.testimonials-section,
+[class*="carousel"] {
+  overflow-x: hidden !important;
+}
+
+/* Ensure lang-switcher parent clips its positioned children */
+.lang-switcher {
+  overflow: visible; /* Keep visible for dropdown to show */
+}
+
+/* ===========================================
+   MOBILE NAV BUTTON POSITIONING
+   CSS handles positioning based on html[dir] attribute.
+   This allows dynamic RTL/LTR switching without inline styles.
+   
+   LTR (default): hamburger LEFT (20px), phone RIGHT (20px)
+   RTL: hamburger RIGHT (20px), phone LEFT (20px) - mirrored
+   =========================================== */
+@media (max-width: 768px) {
+  /* Base positioning and visibility for mobile nav buttons */
+  /* CRITICAL: display: flex overrides any desktop display: none rules */
+  .mobile-toggle,
+  html:not([data-zappy-site-type="ecommerce"]) .phone-header-btn {
+    display: flex !important;
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    z-index: 1001 !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 44px !important;
+    height: 44px !important;
+    background: none !important;
+    border: none !important;
+    cursor: pointer !important;
+  }
+  
+  /* Phone button color - use accent color for visibility */
+  html:not([data-zappy-site-type="ecommerce"]) .phone-header-btn {
+    color: var(--accent, #f59e0b) !important;
+  }
+  
+  html:not([data-zappy-site-type="ecommerce"]) .phone-header-btn svg {
+    width: 24px !important;
+    height: 24px !important;
+    fill: currentColor !important;
+  }
+  
+  /* LTR positioning (default) - hamburger LEFT, phone RIGHT */
+  html:not([dir="rtl"]):not([lang="he"]):not([lang="ar"]) .mobile-toggle,
+  html[dir="ltr"] .mobile-toggle {
+    left: 20px !important;
+    right: auto !important;
+  }
+  
+  html:not([data-zappy-site-type="ecommerce"]):not([dir="rtl"]):not([lang="he"]):not([lang="ar"]) .phone-header-btn,
+  html:not([data-zappy-site-type="ecommerce"])[dir="ltr"] .phone-header-btn {
+    right: 20px !important;
+    left: auto !important;
+  }
+  
+  /* LTR mobile menu slides from LEFT */
+  html:not([dir="rtl"]):not([lang="he"]):not([lang="ar"]) .nav-menu,
+  html[dir="ltr"] .nav-menu {
+    left: 0 !important;
+    right: auto !important;
+  }
+  
+  /* ===========================================
+     MOBILE NAV MENU - VERTICAL LAYOUT FIX
+     CRITICAL: Override any desktop flex-direction: row rules
+     The mobile menu MUST stack vertically (column), not horizontally (row)
+     =========================================== */
+  html[dir="ltr"] .nav-menu,
+  html[dir="ltr"] .nav-menu.active,
+  html[dir="ltr"] #navMenu,
+  html[dir="ltr"] #navMenu.active,
+  html:not([dir="rtl"]):not([lang="he"]):not([lang="ar"]) .nav-menu,
+  html:not([dir="rtl"]):not([lang="he"]):not([lang="ar"]) .nav-menu.active {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+  
+  /* RTL mobile menu - also vertical layout */
+  html[dir="rtl"] .nav-menu,
+  html[dir="rtl"] .nav-menu.active,
+  html[dir="rtl"] #navMenu,
+  html[dir="rtl"] #navMenu.active,
+  html[lang="he"] .nav-menu,
+  html[lang="he"] .nav-menu.active,
+  html[lang="ar"] .nav-menu,
+  html[lang="ar"] .nav-menu.active {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+  
+  /* LTR mobile menu text alignment - left aligned */
+  html:not([dir="rtl"]):not([lang="he"]):not([lang="ar"]) .nav-menu li,
+  html:not([dir="rtl"]):not([lang="he"]):not([lang="ar"]) .nav-menu a,
+  html[dir="ltr"] .nav-menu li,
+  html[dir="ltr"] .nav-menu a {
+    text-align: left !important;
+  }
+  
+  /* ===========================================
+     LTR MOBILE NAV-CONTAINER LAYOUT FIX
+     V2 sites have nav-container with flex-direction: row-reverse
+     for RTL. For LTR, we need flex-direction: row and centered logo.
+     =========================================== */
+  html[dir="ltr"] .nav-container,
+  html:not([dir="rtl"]):not([lang="he"]):not([lang="ar"]) .nav-container {
+    flex-direction: row !important;
+    justify-content: center !important;
+  }
+  
+  /* LTR: Center the logo/nav-brand in mobile navbar */
+  html[dir="ltr"] .nav-brand,
+  html:not([dir="rtl"]):not([lang="he"]):not([lang="ar"]) .nav-brand {
+    order: 0 !important;
+    margin: 0 auto !important;
+  }
+  
+  /* RTL: Center the logo/nav-brand in mobile navbar */
+  html[dir="rtl"] .nav-brand,
+  html[lang="he"] .nav-brand,
+  html[lang="ar"] .nav-brand {
+    order: 0 !important;
+    margin: 0 auto !important;
+  }
+  
+  /* RTL lang-switcher dropdown constraint */
+  html[dir="rtl"] .lang-switcher {
+    position: relative;
+  }
+  
+  html[dir="rtl"] .lang-switcher-dropdown {
+    left: auto !important;
+    right: 0 !important;
+    max-width: calc(100vw - 20px);
+  }
+  
+  /* ===========================================
+     RTL MOBILE NAV BUTTON POSITIONING
+     In RTL: hamburger RIGHT, phone LEFT (mirror of LTR)
+     =========================================== */
+  html[dir="rtl"] .mobile-toggle,
+  html[lang="he"] .mobile-toggle,
+  html[lang="ar"] .mobile-toggle {
+    left: auto !important;
+    right: 20px !important;
+  }
+  
+  html[dir="rtl"]:not([data-zappy-site-type="ecommerce"]) .phone-header-btn,
+  html[lang="he"]:not([data-zappy-site-type="ecommerce"]) .phone-header-btn,
+  html[lang="ar"]:not([data-zappy-site-type="ecommerce"]) .phone-header-btn {
+    left: 20px !important;
+    right: auto !important;
+  }
+
+  /* Explicitly hide phone button on e-commerce sites (cleaner than fighting with e-commerce CSS). */
+  html[data-zappy-site-type="ecommerce"] .phone-header-btn {
+    display: none !important;
+  }
+  
+  /* RTL mobile menu slides from RIGHT */
+  html[dir="rtl"] .nav-menu,
+  html[lang="he"] .nav-menu,
+  html[lang="ar"] .nav-menu {
+    left: auto !important;
+    right: 0 !important;
+  }
+  
+  /* ===========================================
+     MOBILE LANGUAGE SWITCHER
+     Desktop lang-switcher is hidden on mobile.
+     Language selection is handled by the hamburger
+     menu submenu (.mobile-lang-menu) instead.
+     High specificity to override stored CSS.
+     =========================================== */
+  .lang-switcher,
+  .nav-cta-container .lang-switcher,
+  .nav-container .lang-switcher,
+  .navbar .lang-switcher,
+  .navbar .nav-cta-container .lang-switcher,
+  .nav-icons-left .lang-switcher,
+  .nav-ecommerce-icons .lang-switcher {
+    display: none !important;
+  }
+}
+
+/* Desktop: force-show the lang-switcher.
+   This counters a CSS-processing bug where the mobile display:none rules
+   can leak outside their @media block during minification/concatenation. */
+@media (min-width: 769px) {
+  .lang-switcher,
+  .nav-cta-container .lang-switcher,
+  .nav-container .lang-switcher,
+  .navbar .lang-switcher,
+  .navbar .nav-cta-container .lang-switcher,
+  .nav-icons-left .lang-switcher,
+  .nav-ecommerce-icons .lang-switcher {
+    display: inline-flex !important;
+  }
+}
+
+/* Ensure hover/focus opens the dropdown even when CSS is concatenated */
+.lang-switcher:hover .lang-switcher-dropdown,
+.lang-switcher:focus-within .lang-switcher-dropdown {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(0) !important;
+}
+
+.lang-option:hover {
+  background: #f5f5f5;
+}
+
+</style>
     <link rel="stylesheet" href="/styles.css">
 
     <style id="zappy-dropdown-submenu-styles">
@@ -336,7 +1183,7 @@
 <body>
 
     <nav class="navbar">
-  <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+  <button class="mobile-toggle" id="mobileToggle" aria-label="Menu" data-i18n-aria-label="privacy_aria_label_72">
     <svg class="hamburger-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
       <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
     </svg>
@@ -345,7 +1192,7 @@
     </svg>
   </button>
 
-  <button class="phone-header-btn" data-phone="" aria-label="Call">
+  <button class="phone-header-btn" data-phone="" aria-label="Call" data-i18n-aria-label="privacy_aria_label_73">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
       <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
     </svg>
@@ -353,13 +1200,22 @@
 
   <div class="nav-container">
     <div class="nav-brand">
-      <a href="/" class="logo-link"><img class="logo" src="/assets/site-home-image-1.webp" alt="Gentleman’s Chair"></a>
+      <a href="/" class="logo-link"><img class="logo" src="/assets/site-home-image-1.webp" alt="Gentleman’s Chair" data-i18n-alt="privacy_alt_70"></a>
     </div>
 
-    <ul class="nav-menu" id="navMenu"><li><a href="/#about">About</a></li><li><a href="/#services">Services</a></li></ul>
+    <ul class="nav-menu" id="navMenu"><li><a href="/#about" data-i18n="privacy_nav_67">About</a></li><li><a href="/#services" data-i18n="privacy_nav_68">Services</a></li></ul>
 
-    <div class="nav-cta-container">
-      <a href="/#cta" class="nav-cta-btn">Contact</a>
+    
+<div class="lang-switcher" data-no-icon-edit="true" data-icon-color="#f0ead8" style="position:relative;display:inline-flex;align-items:center;z-index:1000;margin:0 4px;">
+  <button class="lang-switcher-current" aria-haspopup="true" aria-expanded="false" data-no-icon-edit="true" style="display:flex;align-items:center;padding:8px;background:transparent;border:none;border-radius:6px;cursor:pointer;color:inherit;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;" data-no-icon-edit="true"><path d="M12.039,.002s0,0,0,0c-.013,0-.026-.002-.039-.002-.005,0-.009,0-.014,0-.002,0-.003,0-.005,0C5.373,.011,0,5.39,0,12s5.383,12,12,12,12-5.383,12-12S18.638,.023,12.039,.002Zm9.747,6.998h-4.814c-1.067-2.669-2.712-4.781-3.731-5.925,3.734,.421,6.901,2.719,8.546,5.925Zm-4.786,5c0,1.407-.292,2.753-.731,4H7.731c-.439-1.247-.731-2.593-.731-4s.292-2.754,.73-4h8.539c.439,1.247,.731,2.593,.731,4Zm-1.122,5c-1.229,2.838-3.116,4.99-3.878,5.788-.762-.798-2.649-2.95-3.878-5.788h7.755ZM8.121,7c1.229-2.841,3.117-4.992,3.879-5.789,.762,.798,2.649,2.95,3.878,5.789h-7.757ZM10.757,1.075c-1.025,1.15-2.668,3.264-3.73,5.925H2.214C3.859,3.795,7.024,1.498,10.757,1.075ZM1.764,8H6.668c-.403,1.247-.668,2.589-.668,4s.265,2.752,.669,4H1.764c-.487-1.242-.764-2.588-.764-4s.277-2.758,.764-4Zm.45,9H7.029c1.067,2.669,2.712,4.781,3.731,5.925-3.734-.421-6.901-2.719-8.546-5.925Zm11.026,5.925c1.019-1.144,2.664-3.257,3.731-5.925h4.814c-1.645,3.206-4.812,5.504-8.546,5.925Zm8.996-6.925h-4.905c.404-1.248,.669-2.589,.669-4s-.265-2.752-.669-4h4.905c.487,1.242,.764,2.588,.764,4s-.277,2.758-.764,4Z"></path></svg>
+  </button>
+  <div class="lang-switcher-dropdown" role="menu" style="position:absolute;top:100%;right:0;margin-top:4px;min-width:140px;background:white;border:1px solid rgba(128,128,128,0.2);border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.15);opacity:0;visibility:hidden;transform:translateY(-8px);transition:all 0.2s ease;z-index:1001;">
+    <button class="lang-option" data-lang="es" style="display:flex;align-items:center;gap:8px;width:100%;padding:10px 14px;background:none;border:none;text-align:left;cursor:pointer;font-size:14px;color:#333;"><img src="https://api.iconify.design/circle-flags/es.svg" width="20" height="20" alt="" style="display:inline-block;vertical-align:middle;border-radius:50%;"> Español</button>
+  </div>
+</div>
+<script data-no-icon-edit="true">(function(){function f(){var b=document.querySelector('.lang-switcher-current');if(!b)return;var n=b.closest('nav')||b.closest('header')||b.closest('.navbar');if(!n)return;var a=n.querySelector('.nav-menu a,.nav-links a');if(!a)a=n.querySelector('a:not(.lang-option):not(.lang-switcher-current):not([class*="logo"])');if(a){var c=getComputedStyle(a).color;if(c&&c!=='rgb(0, 0, 0)'&&c!=='rgba(0, 0, 0, 0)'){b.style.color=c;return;}}var s=getComputedStyle(n).backgroundColor;if(s&&s!=='rgba(0, 0, 0, 0)'&&s!=='transparent'){var m=s.match(/rgba?\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)/);if(m){var l=(0.299*parseInt(m[1])+0.587*parseInt(m[2])+0.114*parseInt(m[3]))/255;b.style.color=l>0.5?'#1a1a1a':'#F3FAFF';}}}if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',f);}else{setTimeout(f,0);}})()</script><div class="nav-cta-container">
+      <a href="/#cta" class="nav-cta-btn" data-i18n="privacy_nav_69">Contact</a>
     </div>
   </div>
 </nav>
@@ -367,80 +1223,80 @@
     <section class="legal-page-content privacy-policy">
   <div class="container">
 
-        <h1>Privacy Policy</h1>
+        <h1 data-i18n="privacy_h1_1">Privacy Policy</h1>
         
-        <div class="last-updated">
+        <div class="last-updated" data-i18n="privacy_div_66">
             <strong>Last Updated:</strong> 5/11/2026
         </div>
 
-        <p>
+        <p data-i18n="privacy_p_13">
             Gentleman’s Chair ("Company", "we", "our") is committed to protecting your privacy. This privacy policy explains how we collect, 
             use and protect your information when you use our website [business_website] ("Service").
         </p>
 
-        <h2>1. Information Collection</h2>
-        <p>We may collect the following types of information:</p>
+        <h2 data-i18n="privacy_h2_2">1. Information Collection</h2>
+        <p data-i18n="privacy_p_14">We may collect the following types of information:</p>
         <ul>
-            <li><strong>Personal Information:</strong> Name, email address, phone number and address</li>
-            <li><strong>Technical Information:</strong> IP address, browser type, operating system and website usage data</li>
-            <li><strong>Cookies:</strong> Information stored on your computer to improve user experience</li>
+            <li data-i18n="privacy_li_48"><strong>Personal Information:</strong> Name, email address, phone number and address</li>
+            <li data-i18n="privacy_li_49"><strong>Technical Information:</strong> IP address, browser type, operating system and website usage data</li>
+            <li data-i18n="privacy_li_50"><strong>Cookies:</strong> Information stored on your computer to improve user experience</li>
         </ul>
 
-        <h2>2. Use of Information</h2>
-        <p>We use the collected information for the following purposes:</p>
+        <h2 data-i18n="privacy_h2_3">2. Use of Information</h2>
+        <p data-i18n="privacy_p_15">We use the collected information for the following purposes:</p>
         <ul>
-            <li>Providing requested services</li>
-            <li>Improving service and user experience</li>
-            <li>Contacting you regarding our services</li>
-            <li>Compliance with legal requirements</li>
+            <li data-i18n="privacy_li_51">Providing requested services</li>
+            <li data-i18n="privacy_li_52">Improving service and user experience</li>
+            <li data-i18n="privacy_li_53">Contacting you regarding our services</li>
+            <li data-i18n="privacy_li_54">Compliance with legal requirements</li>
         </ul>
 
-        <h2>3. Information Sharing</h2>
-        <p>We do not sell, rent or share your personal information with third parties, except in the following cases:</p>
+        <h2 data-i18n="privacy_h2_4">3. Information Sharing</h2>
+        <p data-i18n="privacy_p_16">We do not sell, rent or share your personal information with third parties, except in the following cases:</p>
         <ul>
-            <li>With your explicit consent</li>
-            <li>When required by law</li>
-            <li>To protect our rights or user safety</li>
-            <li>With service providers who assist in operating the service (under confidentiality agreements)</li>
+            <li data-i18n="privacy_li_55">With your explicit consent</li>
+            <li data-i18n="privacy_li_56">When required by law</li>
+            <li data-i18n="privacy_li_57">To protect our rights or user safety</li>
+            <li data-i18n="privacy_li_58">With service providers who assist in operating the service (under confidentiality agreements)</li>
         </ul>
 
-        <h2>4. User Rights</h2>
-        <p>In accordance with Israeli Privacy Protection Law 1981, you have the following rights:</p>
+        <h2 data-i18n="privacy_h2_5">4. User Rights</h2>
+        <p data-i18n="privacy_p_17">In accordance with Israeli Privacy Protection Law 1981, you have the following rights:</p>
         <ul>
-            <li>Right to access personal information stored about you</li>
-            <li>Right to correct inaccurate or incomplete information</li>
-            <li>Right to delete personal information in certain circumstances</li>
-            <li>Right to object to information processing for marketing purposes</li>
-            <li>Right to file a complaint with the Data Protection Authority</li>
+            <li data-i18n="privacy_li_59">Right to access personal information stored about you</li>
+            <li data-i18n="privacy_li_60">Right to correct inaccurate or incomplete information</li>
+            <li data-i18n="privacy_li_61">Right to delete personal information in certain circumstances</li>
+            <li data-i18n="privacy_li_62">Right to object to information processing for marketing purposes</li>
+            <li data-i18n="privacy_li_63">Right to file a complaint with the Data Protection Authority</li>
         </ul>
 
-        <h2>5. Cookies</h2>
-        <p>
+        <h2 data-i18n="privacy_h2_6">5. Cookies</h2>
+        <p data-i18n="privacy_p_18">
             Our website uses cookies to improve user experience. You can manage cookies through your browser settings. 
             Disabling cookies may affect website functionality.
         </p>
 
-        <h2>6. Information Security</h2>
-        <p>
+        <h2 data-i18n="privacy_h2_7">6. Information Security</h2>
+        <p data-i18n="privacy_p_19">
             We implement reasonable security measures to protect your information, including encryption, firewalls and restricted access control. 
             However, no transmission or storage method is 100% secure.
         </p>
 
-        <h2>7. Policy Changes</h2>
-        <p>
+        <h2 data-i18n="privacy_h2_8">7. Policy Changes</h2>
+        <p data-i18n="privacy_p_20">
             We may update this privacy policy from time to time. Material changes will be posted on the website with 30 days advance notice.
         </p>
 
         <div class="contact-info">
-            <h2>8. Contact Information</h2>
-            <p>For questions or requests regarding this privacy policy, please contact us:</p>
+            <h2 data-i18n="privacy_h2_9">8. Contact Information</h2>
+            <p data-i18n="privacy_p_21">For questions or requests regarding this privacy policy, please contact us:</p>
             <ul>
-                <li><strong>Company:</strong> Gentleman’s Chair</li>
-                <li><strong>Email:</strong> <a href="mailto:[business_email]">[business_email]</a></li>
-                <li><strong>Phone:</strong> <a href="tel:[business_phone]">[business_phone]</a></li>
-                <li><strong>Address:</strong> [business_address]</li>
+                <li data-i18n="privacy_li_64"><strong>Company:</strong> Gentleman’s Chair</li>
+                <li><strong>Email:</strong> <a href="mailto:[business_email]" data-i18n="privacy_link_34">[business_email]</a></li>
+                <li><strong>Phone:</strong> <a href="tel:[business_phone]" data-i18n="privacy_link_35">[business_phone]</a></li>
+                <li data-i18n="privacy_li_65"><strong>Address:</strong> [business_address]</li>
             </ul>
-            <p><strong>Data Protection Authority:</strong> For complaints, you may contact the Data Protection Authority at the Ministry of Justice</p>
+            <p data-i18n="privacy_p_22"><strong>Data Protection Authority:</strong> For complaints, you may contact the Data Protection Authority at the Ministry of Justice</p>
         </div>
 
         
@@ -448,8 +1304,2340 @@
   </div>
 </section>
     </main>
-    <footer class="site-footer"><div class="footer-container"><div class="footer-top"><div class="footer-col footer-col--brand"><div class="footer-logo-wrap"><img src="/assets/gentleman-s-chair-grooming-personal-care-logo.webp" alt="Gentleman’s Chair" class="logo" /></div><p class="footer-tagline">The art of the perfect shave. Tradition, precision, and craft — delivered with old-world distinction.</p><div class="footer-social"></div></div><div class="footer-col footer-col--links"><h3 class="footer-heading"><span class="heading-rule"></span>Navigation</h3><ul class="footer-nav"><li><a href="/#about">About</a></li><li><a href="/#services">Services</a></li></ul></div><div class="footer-col footer-col--contact"><h3 class="footer-heading"><span class="heading-rule"></span>Get In Touch</h3><ul class="footer-contact"><li><span class="contact-icon"><i class="fas fa-envelope"></i></span><span class="contact-text"><a href="mailto:[business_email]">[business_email]</a></span></li><li><span class="contact-icon"><i class="fas fa-phone"></i></span><span class="contact-text"><a href="tel:[business_phone]">[business_phone]</a></span></li><li><a href="/"><span class="contact-icon"><i class="fas fa-map-marker-alt"></i></span><span class="contact-text">[business_address]</span></a></li></ul></div><div class="footer-col footer-col--hours"><h3 class="footer-heading"><span class="heading-rule"></span>Opening Hours</h3><ul class="footer-hours"><li><a href="/"><span>Mon – Fri</span><span>9:00am – 7:00pm</span></a></li><li><a href="/"><span>Saturday</span><span>9:00am – 5:00pm</span></a></li><li><a href="/"><span>Sunday</span><span>Closed</span></a></li></ul></div></div><div class="footer-divider"></div><div class="footer-bottom"><p class="footer-copyright">© 2026 Gentleman's Chair. All rights reserved.</p><div class="footer-legal"><a href="/privacy">Privacy Policy</a><span class="legal-sep">·</span><a href="/terms">Terms &amp; Conditions</a><span class="legal-sep">·</span><a href="/accessibility">Accessibility</a><span class="legal-sep">·</span><a href="https://zappy5.com" target="_blank" class="zappy-attribution">Generated by Zappy</a></div></div></div></footer>
+    <footer class="site-footer"><div class="footer-container"><div class="footer-top"><div class="footer-col footer-col--brand"><div class="footer-logo-wrap"><img src="/assets/gentleman-s-chair-grooming-personal-care-logo.webp" alt="Gentleman’s Chair" class="logo" data-i18n-alt="privacy_alt_71"></div><p class="footer-tagline" data-i18n="privacy_p_23">The art of the perfect shave. Tradition, precision, and craft — delivered with old-world distinction.</p><div class="footer-social"></div></div><div class="footer-col footer-col--links"><h3 class="footer-heading" data-i18n="privacy_h3_10"><span class="heading-rule"></span>Navigation</h3><ul class="footer-nav"><li><a href="/#about" data-i18n="privacy_link_36">About</a></li><li><a href="/#services" data-i18n="privacy_link_37">Services</a></li></ul></div><div class="footer-col footer-col--contact"><h3 class="footer-heading" data-i18n="privacy_h3_11"><span class="heading-rule"></span>Get In Touch</h3><ul class="footer-contact"><li><span class="contact-icon"><i class="fas fa-envelope"></i></span><span class="contact-text" data-i18n="privacy_span_25"><a href="mailto:[business_email]" data-i18n="privacy_link_38">[business_email]</a></span></li><li><span class="contact-icon"><i class="fas fa-phone"></i></span><span class="contact-text" data-i18n="privacy_span_26"><a href="tel:[business_phone]" data-i18n="privacy_link_39">[business_phone]</a></span></li><li><a href="/" data-i18n="privacy_link_40"><span class="contact-icon"><i class="fas fa-map-marker-alt"></i></span><span class="contact-text">[business_address]</span></a></li></ul></div><div class="footer-col footer-col--hours"><h3 class="footer-heading" data-i18n="privacy_h3_12"><span class="heading-rule"></span>Opening Hours</h3><ul class="footer-hours"><li><a href="/" data-i18n="privacy_link_41"><span>Mon – Fri</span><span>9:00am – 7:00pm</span></a></li><li><a href="/" data-i18n="privacy_link_42"><span>Saturday</span><span>9:00am – 5:00pm</span></a></li><li><a href="/" data-i18n="privacy_link_43"><span>Sunday</span><span>Closed</span></a></li></ul></div></div><div class="footer-divider"></div><div class="footer-bottom"><p class="footer-copyright" data-i18n="privacy_p_24">© 2026 Gentleman's Chair. All rights reserved.</p><div class="footer-legal"><a href="/privacy" data-i18n="privacy_link_44">Privacy Policy</a><span class="legal-sep">·</span><a href="/terms" data-i18n="privacy_link_45">Terms &amp; Conditions</a><span class="legal-sep">·</span><a href="/accessibility" data-i18n="privacy_link_46">Accessibility</a><span class="legal-sep">·</span><a href="https://zappy5.com" target="_blank" class="zappy-attribution" data-i18n="privacy_link_47">Generated by Zappy</a></div></div></div></footer>
     <div data-integration="accessibility:toolbar"></div>
+
+<!-- i18next Multi-Language Support -->
+<script>
+(function() {
+  var __generatedDir = document.documentElement.getAttribute('dir') || 'ltr';
+
+  // Language resources (inline to avoid CDN dependency)
+  const resources = {
+  "en": {
+    "translation": {
+      "ecom_accountWelcome": "Welcome",
+      "ecom_addAddress": "Add Address",
+      "ecom_addBundleToCart": "Add {count} items to cart",
+      "ecom_addToCart": "Add to Cart",
+      "ecom_addedToCart": "Product added to cart!",
+      "ecom_addedToFavorites": "Added to favorites",
+      "ecom_addressDeleted": "Address deleted",
+      "ecom_addressLabel": "Address Label",
+      "ecom_addressSaved": "Address saved successfully",
+      "ecom_addresses": "Addresses",
+      "ecom_agreeToTerms": "I agree to the",
+      "ecom_all": "All",
+      "ecom_alreadyHaveAccount": "Already have an account?",
+      "ecom_apartment": "Apt, Floor, Unit",
+      "ecom_apartmentExt": "Apt, Floor, Building Code, Notes, Etc.",
+      "ecom_applyCoupon": "Apply",
+      "ecom_backToProducts": "Back to Products",
+      "ecom_browseFavorites": "Discover all our products",
+      "ecom_bundleTotal": "Bundle total",
+      "ecom_callNow": "Call Now",
+      "ecom_cancel": "Cancel",
+      "ecom_capacity": "Capacity",
+      "ecom_cart": "Cart",
+      "ecom_category": "Category",
+      "ecom_checkout": "Checkout",
+      "ecom_city": "City",
+      "ecom_cityRequired": "Please enter your city",
+      "ecom_color": "Color",
+      "ecom_confirmDelete": "Are you sure you want to delete?",
+      "ecom_contactInformation": "Contact Information",
+      "ecom_continueShopping": "Continue Shopping",
+      "ecom_continueToHomePage": "Continue to Home Page",
+      "ecom_countryRegion": "Country / Region",
+      "ecom_couponApplied": "Coupon applied successfully!",
+      "ecom_couponCode": "Coupon Code",
+      "ecom_couponExpired": "Coupon has expired",
+      "ecom_couponMinOrder": "Minimum order amount",
+      "ecom_customerInfo": "Customer Info",
+      "ecom_customerLogin": "Customer Login",
+      "ecom_days": "days",
+      "ecom_defaultAddress": "Default Address",
+      "ecom_deleteAddress": "Delete Address",
+      "ecom_discount": "Discount",
+      "ecom_editAddress": "Edit Address",
+      "ecom_editProfile": "Edit Profile",
+      "ecom_email": "Email",
+      "ecom_emailAddress": "Email Address",
+      "ecom_emailInvalid": "Please enter a valid email address",
+      "ecom_emailRequired": "Please enter your email address",
+      "ecom_emptyCart": "Your cart is empty",
+      "ecom_enterCode": "Enter the code sent to your email",
+      "ecom_enterCouponCode": "Enter coupon code",
+      "ecom_enterEmail": "Enter your email and we'll send you a login code",
+      "ecom_errorLoading": "Error loading options",
+      "ecom_featured": "Featured",
+      "ecom_featuredCategories": "Shop by Category",
+      "ecom_featuredProducts": "Featured Products",
+      "ecom_free": "FREE",
+      "ecom_freeAbove": "Free above",
+      "ecom_frequentlyBoughtTogether": "Frequently bought together",
+      "ecom_frequentlyBoughtTogetherSubtitle": "Save time and get everything you need",
+      "ecom_fullName": "Full Name",
+      "ecom_haveCouponCode": "I have a coupon code",
+      "ecom_home": "Home",
+      "ecom_inStock": "In Stock",
+      "ecom_inquiryAbout": "Inquiry about",
+      "ecom_invalidCoupon": "Invalid coupon code",
+      "ecom_items": "Items",
+      "ecom_length": "Length",
+      "ecom_linkCopied": "Link copied!",
+      "ecom_loadingOrder": "Loading order details...",
+      "ecom_loadingPayment": "Loading payment options...",
+      "ecom_loadingProducts": "Loading products...",
+      "ecom_loadingShipping": "Loading shipping methods...",
+      "ecom_loggedInAs": "Logged in as:",
+      "ecom_login": "Login",
+      "ecom_loginHere": "Login here",
+      "ecom_loginToFavorite": "Log in to save favorites",
+      "ecom_logout": "Logout",
+      "ecom_material": "Material",
+      "ecom_mobileNumber": "Mobile Number",
+      "ecom_myAccount": "My Account",
+      "ecom_myFavorites": "My Favorites",
+      "ecom_name": "Name",
+      "ecom_nameRequired": "Please enter your full name",
+      "ecom_new": "New",
+      "ecom_next": "Next",
+      "ecom_noAddresses": "No saved addresses",
+      "ecom_noFavorites": "No favorites yet",
+      "ecom_noFeaturedProducts": "No featured products yet. Check out all our products!",
+      "ecom_noOrders": "No orders yet",
+      "ecom_noProducts": "No products to display",
+      "ecom_noShippingMethods": "No shipping options available",
+      "ecom_notLoggedIn": "Not Logged In",
+      "ecom_orderConfirmation": "A confirmation email has been sent to you",
+      "ecom_orderDate": "Date",
+      "ecom_orderDetails": "Order Details",
+      "ecom_orderItems": "Order Items",
+      "ecom_orderNotFound": "Order not found",
+      "ecom_orderNumber": "Order Number",
+      "ecom_orderProcessing": "Your order is being processed. We'll notify you when it ships.",
+      "ecom_orderStatus": "Status",
+      "ecom_orderSuccess": "Order Received!",
+      "ecom_orderSummary": "Order Summary",
+      "ecom_orderTotal": "Total",
+      "ecom_other": "Other",
+      "ecom_ourProducts": "Our Products",
+      "ecom_outOfStock": "Out of Stock",
+      "ecom_paidAmount": "Amount Paid",
+      "ecom_payment": "Payment",
+      "ecom_paymentMethod": "Payment Method",
+      "ecom_paymentNotConfigured": "Online payment not configured",
+      "ecom_personalDetails": "Personal Details",
+      "ecom_phone": "Phone",
+      "ecom_phoneRequired": "Please enter your phone number",
+      "ecom_placeOrder": "Place Order",
+      "ecom_pleaseAcceptTerms": "Please accept the terms and conditions",
+      "ecom_pleaseLogin": "Please login to view your account",
+      "ecom_pleaseSelect": "Please select",
+      "ecom_proceedToCheckout": "Proceed to Checkout",
+      "ecom_productDetails": "Product Details",
+      "ecom_productNotFound": "Product not found",
+      "ecom_products": "Products",
+      "ecom_profileUpdated": "Profile updated successfully",
+      "ecom_quantity": "Quantity",
+      "ecom_relatedProducts": "Related Products",
+      "ecom_remove": "Remove",
+      "ecom_removeCoupon": "Remove",
+      "ecom_removeFromFavorites": "Remove from Favorites",
+      "ecom_removedFromFavorites": "Removed from favorites",
+      "ecom_returnPolicy": "Return Policy",
+      "ecom_sale": "Sale",
+      "ecom_saveAddressForNextTime": "Save this address for next time",
+      "ecom_saveChanges": "Save Changes",
+      "ecom_saveToFavorites": "Save to Favorites",
+      "ecom_saving": "Saving...",
+      "ecom_searchProducts": "Search products",
+      "ecom_selectVariant": "Select option",
+      "ecom_sendCode": "Send Code",
+      "ecom_sendInquiry": "Send Inquiry",
+      "ecom_setAsDefault": "Set as Default",
+      "ecom_shareProduct": "Share Product",
+      "ecom_shipping": "Shipping",
+      "ecom_shippingAddress": "Shipping Address",
+      "ecom_shippingMethod": "Shipping Method",
+      "ecom_shippingRequired": "Please select a shipping method",
+      "ecom_signInHere": "Sign in here",
+      "ecom_size": "Size",
+      "ecom_sku": "SKU",
+      "ecom_specifications": "Specifications",
+      "ecom_startingAt": "Starting at",
+      "ecom_stateProvince": "State / Province",
+      "ecom_stateRequired": "Please select a state / province",
+      "ecom_statusCancelled": "Cancelled",
+      "ecom_statusDelivered": "Delivered",
+      "ecom_statusPaid": "Paid",
+      "ecom_statusPending": "Pending Payment",
+      "ecom_statusProcessing": "Processing",
+      "ecom_statusShipped": "Shipped",
+      "ecom_storeNote": "Additional Information",
+      "ecom_street": "Street Address",
+      "ecom_streetAndNumber": "Street and Number",
+      "ecom_streetRequired": "Please enter your street address",
+      "ecom_style": "Style",
+      "ecom_subtotal": "Subtotal",
+      "ecom_termsAndConditions": "Terms and Conditions",
+      "ecom_thankYouOrder": "Thank you for your order",
+      "ecom_total": "Total",
+      "ecom_totalToPay": "Total to Pay",
+      "ecom_transactionDate": "Transaction Date",
+      "ecom_upsellFree": "Free",
+      "ecom_variantUnavailable": "Unavailable",
+      "ecom_vat": "VAT",
+      "ecom_vatIncluded": "Including VAT",
+      "ecom_verificationCode": "Verification Code",
+      "ecom_verify": "Verify",
+      "ecom_viewAllResults": "View all results",
+      "ecom_viewDetails": "View Details",
+      "ecom_viewOrder": "View Order",
+      "ecom_weight": "Weight",
+      "ecom_work": "Work",
+      "ecom_yourCart": "Your Cart",
+      "ecom_yourOrders": "Your Orders",
+      "ecom_zip": "ZIP Code",
+      "ecom_zipPostal": "Zip / Postal Code",
+      "home_h1_1": "Confidence\n        \n          \n          Is\n          \n        \n        Our Craft.",
+      "home_h2_2": "More Than a Haircut.\n\n          It's a Ritual.",
+      "home_h2_3": "Sharp Looks. Timeless Standards.",
+      "home_h2_4": "Your Best Look\n\n        Starts Here.",
+      "home_h3_5": "Precision. Style. Character.",
+      "home_h3_6": "Haircuts",
+      "home_h3_7": "Shaves",
+      "home_h3_8": "Beard Care",
+      "home_h3_9": "Grooming",
+      "home_p_13": "A Cut Above.",
+      "home_p_14": "Tailored to You.",
+      "home_p_15": "About the Chair",
+      "home_p_16": "At Gentleman's Chair, we believe personal grooming hygiene is an essential part of the modern gentleman's lifestyle. Every cut, shave, and beard trim is delivered with precision, passion, and purpose — a deliberate act of self-care that honours your time and your craft.",
+      "home_p_17": "We've built a space where old-world craftsmanship meets quiet confidence. Pull up a chair. You're in good hands.",
+      "home_p_18": "Classic cuts. Modern style. Always tailored to you — from timeless fades to sharp, sculpted shapes that define personal grooming at its finest.",
+      "home_p_19": "Traditional hot towel shaves for the ultimate smooth finish. Ritual-grade grooming personal care — a ceremony, not just a service.",
+      "home_p_20": "Shape, trim, and nourish. Because detail defines you. Expert beard sculpting and conditioning for the modern gentleman.",
+      "home_p_21": "Premium products for hair, beard, and skin. Curated selections for personal grooming hygiene that elevate your daily ritual.",
+      "home_p_22": "Step In. Stand Out.",
+      "home_p_23": "Experience the art of personal grooming in a space designed for gentlemen like you. Every visit is a ritual — precision, care, and craft.",
+      "home_p_24": "The art of the perfect shave. Tradition, precision, and craft — delivered with old-world distinction.",
+      "home_p_25": "© 2026 Gentleman's Chair. All rights reserved.",
+      "home_h3_10": "Navigation",
+      "home_h3_11": "Get In Touch",
+      "home_h3_12": "Opening Hours",
+      "terms_h1_1": "Terms of Use",
+      "terms_h2_2": "1. Definitions",
+      "terms_h2_3": "2. Description of Services",
+      "terms_h2_4": "3. Terms of Use",
+      "terms_h2_5": "4. User Obligations",
+      "terms_h2_6": "5. Payment and Refund Policy",
+      "terms_h2_7": "6. Limitation of Liability",
+      "terms_h2_8": "7. Copyright and Intellectual Property",
+      "terms_h2_9": "8. Privacy",
+      "terms_p_18": "Gentleman’s Chair provides grooming & personal care through the site. The services are subject to the terms \n            detailed in this document and may change from time to time.",
+      "terms_p_19": "Use of the site is conditional on compliance with the following terms:",
+      "terms_p_20": "If services include payment:",
+      "terms_p_21": "Services are provided \"as is\" without warranty of any kind. The Company will not be liable for indirect, \n            consequential, or special damages arising from use of the site, except where required by law.",
+      "terms_p_22": "All content on the site, including text, images, design, and code, is protected by copyright owned by Gentleman’s Chair. \n            Reproduction, distribution, or commercial use of content is prohibited without written permission.",
+      "terms_p_23": "Collection and use of personal information is subject to our Privacy Policy. Use of the site constitutes \n            agreement to the Privacy Policy as detailed separately.",
+      "terms_p_24": "The Company may change these terms of use at any time. Material changes will be posted on the site with \n            30 days advance notice. Continued use after changes constitutes agreement to the new terms.",
+      "terms_p_25": "The Company may suspend or limit service at any time, including in cases of terms of use violations. \n            In case of service termination, relevant provisions will remain in effect.",
+      "terms_p_26": "These terms of use are governed by applicable laws. Any disputes will be resolved in accordance with \n            local jurisdiction, with preference given to arbitration or mediation where possible.",
+      "terms_p_27": "For questions or clarifications regarding the terms of use:",
+      "terms_p_28": "The art of the perfect shave. Tradition, precision, and craft — delivered with old-world distinction.",
+      "terms_p_29": "© 2026 Gentleman's Chair. All rights reserved.",
+      "home_alt_69": "Gentleman’s Chair",
+      "home_alt_70": "Classic black leather barber chair in warm amber-lit vintage barbershop interior",
+      "home_alt_71": "Gold scissors icon for haircut services",
+      "home_alt_72": "Gold straight razor icon for shave services",
+      "home_alt_73": "Gold beard silhouette icon for beard care services",
+      "home_alt_74": "Gold grooming product bottle icon for grooming services",
+      "home_alt_75": "Barbershop flat lay with straight razor, shaving brush, and grooming tin on dark leather",
+      "home_alt_76": "Gentleman’s Chair",
+      "home_div_65": "Scroll\n      Down\n      ↓",
+      "home_nav_66": "About",
+      "home_nav_67": "Services",
+      "home_nav_68": "Contact",
+      "terms_h2_10": "9. Changes to Terms of Use",
+      "terms_h2_11": "10. Service Termination",
+      "terms_h2_12": "11. Governing Law and Dispute Resolution",
+      "terms_h2_13": "12. General Provisions",
+      "terms_h2_14": "13. Contact Information",
+      "terms_h3_15": "Navigation",
+      "terms_h3_16": "Get In Touch",
+      "terms_h3_17": "Opening Hours",
+      "terms_li_53": "\"Company\" - Gentleman’s Chair",
+      "terms_li_54": "\"User\" - Anyone who browses or uses the site",
+      "terms_li_55": "\"Services\" - grooming & personal care provided through the site",
+      "terms_li_56": "Use of the site for lawful purposes only",
+      "terms_li_57": "No interference with site operations or other users",
+      "terms_li_58": "No uploading of offensive, illegal, or harmful content",
+      "terms_li_59": "Respect for copyright and intellectual property rights",
+      "terms_li_60": "No actions that may compromise site security",
+      "terms_li_61": "Providing accurate and truthful information during registration or ordering",
+      "terms_li_62": "Maintaining confidentiality of account access details",
+      "terms_li_63": "Immediate notification of any unauthorized account use",
+      "terms_li_64": "Updating personal information as needed",
+      "terms_li_65": "Payments are processed through secure and encrypted systems",
+      "terms_li_66": "Prices include applicable taxes as required by law",
+      "terms_li_67": "Right to cancel will be in accordance with consumer protection laws",
+      "terms_li_68": "Refunds will be processed within 14 business days of cancellation approval",
+      "terms_li_69": "If any portion of the terms is found invalid, remaining terms will remain in effect",
+      "terms_li_70": "Non-enforcement of a right will not be considered a waiver",
+      "terms_li_71": "These terms of use constitute the entire agreement between the parties",
+      "terms_li_72": "Company: Gentleman’s Chair",
+      "terms_li_73": "Address: [business_address]",
+      "home_link_44": "Skip to main content",
+      "home_link_45": "Book Your Experience",
+      "home_link_46": "Our Story ›",
+      "home_link_47": "Learn More ›",
+      "home_link_48": "Learn More ›",
+      "home_link_49": "Learn More ›",
+      "home_link_50": "Learn More ›",
+      "home_link_51": "Book Appointment",
+      "home_link_52": "Explore Services",
+      "home_link_53": "About",
+      "home_link_54": "Services",
+      "home_link_55": "[business_email]",
+      "home_link_56": "[business_phone]",
+      "home_link_57": "[business_address]",
+      "home_link_58": "Mon – Fri9:00am – 7:00pm",
+      "home_link_59": "Saturday9:00am – 5:00pm",
+      "home_link_60": "SundayClosed",
+      "home_link_61": "Privacy Policy",
+      "home_link_62": "Terms & Conditions",
+      "home_link_63": "Accessibility",
+      "home_link_64": "Generated by Zappy",
+      "home_span_33": "Our Services",
+      "home_span_35": "[business_email]",
+      "home_span_36": "[business_phone]",
+      "privacy_h1_1": "Privacy Policy",
+      "privacy_h2_2": "1. Information Collection",
+      "privacy_h2_3": "2. Use of Information",
+      "privacy_h2_4": "3. Information Sharing",
+      "privacy_h2_5": "4. User Rights",
+      "privacy_h2_6": "5. Cookies",
+      "privacy_h2_7": "6. Information Security",
+      "privacy_h2_8": "7. Policy Changes",
+      "privacy_h2_9": "8. Contact Information",
+      "privacy_p_13": "Gentleman’s Chair (\"Company\", \"we\", \"our\") is committed to protecting your privacy. This privacy policy explains how we collect, \n            use and protect your information when you use our website [business_website] (\"Service\").",
+      "privacy_p_14": "We may collect the following types of information:",
+      "privacy_p_15": "We use the collected information for the following purposes:",
+      "privacy_p_16": "We do not sell, rent or share your personal information with third parties, except in the following cases:",
+      "privacy_p_17": "In accordance with Israeli Privacy Protection Law 1981, you have the following rights:",
+      "privacy_p_18": "Our website uses cookies to improve user experience. You can manage cookies through your browser settings. \n            Disabling cookies may affect website functionality.",
+      "privacy_p_19": "We implement reasonable security measures to protect your information, including encryption, firewalls and restricted access control. \n            However, no transmission or storage method is 100% secure.",
+      "privacy_p_20": "We may update this privacy policy from time to time. Material changes will be posted on the website with 30 days advance notice.",
+      "privacy_p_21": "For questions or requests regarding this privacy policy, please contact us:",
+      "privacy_p_22": "Data Protection Authority: For complaints, you may contact the Data Protection Authority at the Ministry of Justice",
+      "privacy_p_23": "The art of the perfect shave. Tradition, precision, and craft — delivered with old-world distinction.",
+      "privacy_p_24": "© 2026 Gentleman's Chair. All rights reserved.",
+      "terms_alt_79": "Gentleman’s Chair",
+      "terms_alt_80": "Gentleman’s Chair",
+      "terms_div_74": "Last updated: May 11, 2026",
+      "terms_div_75": "Use of this site constitutes agreement to the terms outlined below. Please read carefully before use.",
+      "terms_nav_76": "About",
+      "terms_nav_77": "Services",
+      "terms_nav_78": "Contact",
+      "privacy_h3_10": "Navigation",
+      "privacy_h3_11": "Get In Touch",
+      "privacy_h3_12": "Opening Hours",
+      "privacy_li_48": "Personal Information: Name, email address, phone number and address",
+      "privacy_li_49": "Technical Information: IP address, browser type, operating system and website usage data",
+      "privacy_li_50": "Cookies: Information stored on your computer to improve user experience",
+      "privacy_li_51": "Providing requested services",
+      "privacy_li_52": "Improving service and user experience",
+      "privacy_li_53": "Contacting you regarding our services",
+      "privacy_li_54": "Compliance with legal requirements",
+      "privacy_li_55": "With your explicit consent",
+      "privacy_li_56": "When required by law",
+      "privacy_li_57": "To protect our rights or user safety",
+      "privacy_li_58": "With service providers who assist in operating the service (under confidentiality agreements)",
+      "privacy_li_59": "Right to access personal information stored about you",
+      "privacy_li_60": "Right to correct inaccurate or incomplete information",
+      "privacy_li_61": "Right to delete personal information in certain circumstances",
+      "privacy_li_62": "Right to object to information processing for marketing purposes",
+      "privacy_li_63": "Right to file a complaint with the Data Protection Authority",
+      "privacy_li_64": "Company: Gentleman’s Chair",
+      "privacy_li_65": "Address: [business_address]",
+      "terms_link_39": "[business_email]",
+      "terms_link_40": "[business_phone]",
+      "terms_link_41": "About",
+      "terms_link_42": "Services",
+      "terms_link_43": "[business_email]",
+      "terms_link_44": "[business_phone]",
+      "terms_link_45": "[business_address]",
+      "terms_link_46": "Mon – Fri9:00am – 7:00pm",
+      "terms_link_47": "Saturday9:00am – 5:00pm",
+      "terms_link_48": "SundayClosed",
+      "terms_link_49": "Privacy Policy",
+      "terms_link_50": "Terms & Conditions",
+      "terms_link_51": "Accessibility",
+      "terms_link_52": "Generated by Zappy",
+      "terms_span_30": "[business_email]",
+      "terms_span_31": "[business_phone]",
+      "privacy_alt_70": "Gentleman’s Chair",
+      "privacy_alt_71": "Gentleman’s Chair",
+      "privacy_div_66": "Last Updated: 5/11/2026",
+      "privacy_nav_67": "About",
+      "privacy_nav_68": "Services",
+      "privacy_nav_69": "Contact",
+      "home_page_title": "personal grooming hygiene — Gentleman’s Chair",
+      "privacy_link_34": "[business_email]",
+      "privacy_link_35": "[business_phone]",
+      "privacy_link_36": "About",
+      "privacy_link_37": "Services",
+      "privacy_link_38": "[business_email]",
+      "privacy_link_39": "[business_phone]",
+      "privacy_link_40": "[business_address]",
+      "privacy_link_41": "Mon – Fri9:00am – 7:00pm",
+      "privacy_link_42": "Saturday9:00am – 5:00pm",
+      "privacy_link_43": "SundayClosed",
+      "privacy_link_44": "Privacy Policy",
+      "privacy_link_45": "Terms & Conditions",
+      "privacy_link_46": "Accessibility",
+      "privacy_link_47": "Generated by Zappy",
+      "privacy_span_25": "[business_email]",
+      "privacy_span_26": "[business_phone]",
+      "legal_terms_h1_1": "Terms of Use",
+      "legal_terms_h2_2": "1. Definitions",
+      "legal_terms_h2_3": "2. Description of Services",
+      "legal_terms_h2_4": "3. Terms of Use",
+      "legal_terms_h2_5": "4. User Obligations",
+      "legal_terms_h2_6": "5. Payment and Refund Policy",
+      "legal_terms_h2_7": "6. Limitation of Liability",
+      "legal_terms_h2_8": "7. Copyright and Intellectual Property",
+      "legal_terms_h2_9": "8. Privacy",
+      "legal_terms_p_15": "[business_name] provides general services through the site. The services are subject to the terms \n            detailed in this document and may change from time to time.",
+      "legal_terms_p_16": "Use of the site is conditional on compliance with the following terms:",
+      "legal_terms_p_17": "If services include payment:",
+      "legal_terms_p_18": "Services are provided \"as is\" without warranty of any kind. The Company will not be liable for indirect, \n            consequential, or special damages arising from use of the site, except where required by law.",
+      "legal_terms_p_19": "All content on the site, including text, images, design, and code, is protected by copyright owned by [business_name]. \n            Reproduction, distribution, or commercial use of content is prohibited without written permission.",
+      "legal_terms_p_20": "Collection and use of personal information is subject to our Privacy Policy. Use of the site constitutes \n            agreement to the Privacy Policy as detailed separately.",
+      "legal_terms_p_21": "The Company may change these terms of use at any time. Material changes will be posted on the site with \n            30 days advance notice. Continued use after changes constitutes agreement to the new terms.",
+      "legal_terms_p_22": "The Company may suspend or limit service at any time, including in cases of terms of use violations. \n            In case of service termination, relevant provisions will remain in effect.",
+      "legal_terms_p_23": "These terms of use are governed by applicable laws. Any disputes will be resolved in accordance with \n            local jurisdiction, with preference given to arbitration or mediation where possible.",
+      "legal_terms_p_24": "For questions or clarifications regarding the terms of use:",
+      "terms_page_title": "Terms & Conditions",
+      "home_seo_keywords": "personal grooming hygiene, grooming personal care, Gentleman’s Chair, gentleman’s chair",
+      "home_seo_og_title": "personal grooming hygiene — Gentleman’s Chair",
+      "legal_terms_h2_10": "9. Changes to Terms of Use",
+      "legal_terms_h2_11": "10. Service Termination",
+      "legal_terms_h2_12": "11. Governing Law and Dispute Resolution",
+      "legal_terms_h2_13": "12. General Provisions",
+      "legal_terms_h2_14": "13. Contact Information",
+      "legal_terms_li_28": "\"Company\" - [business_name]",
+      "legal_terms_li_29": "\"User\" - Anyone who browses or uses the site",
+      "legal_terms_li_30": "\"Services\" - general services provided through the site",
+      "legal_terms_li_31": "Use of the site for lawful purposes only",
+      "legal_terms_li_32": "No interference with site operations or other users",
+      "legal_terms_li_33": "No uploading of offensive, illegal, or harmful content",
+      "legal_terms_li_34": "Respect for copyright and intellectual property rights",
+      "legal_terms_li_35": "No actions that may compromise site security",
+      "legal_terms_li_36": "Providing accurate and truthful information during registration or ordering",
+      "legal_terms_li_37": "Maintaining confidentiality of account access details",
+      "legal_terms_li_38": "Immediate notification of any unauthorized account use",
+      "legal_terms_li_39": "Updating personal information as needed",
+      "legal_terms_li_40": "Payments are processed through secure and encrypted systems",
+      "legal_terms_li_41": "Prices include applicable taxes as required by law",
+      "legal_terms_li_42": "Right to cancel will be in accordance with consumer protection laws",
+      "legal_terms_li_43": "Refunds will be processed within 14 business days of cancellation approval",
+      "legal_terms_li_44": "If any portion of the terms is found invalid, remaining terms will remain in effect",
+      "legal_terms_li_45": "Non-enforcement of a right will not be considered a waiver",
+      "legal_terms_li_46": "These terms of use constitute the entire agreement between the parties",
+      "legal_terms_li_47": "Company: [business_name]",
+      "legal_terms_li_48": "Address: [business_address]",
+      "accessibility_h1_1": "Accessibility Statement",
+      "accessibility_h2_2": "1. Accessibility Policy",
+      "accessibility_h2_3": "2. Accessibility Arrangements on the Site",
+      "accessibility_h2_4": "3. Supported Assistive Technologies",
+      "accessibility_h2_5": "4. Accessibility Testing",
+      "accessibility_h2_6": "5. Continuous Improvements",
+      "accessibility_h2_7": "6. Contact and Feedback",
+      "accessibility_h3_8": "WCAG 2.1 Compliance",
+      "accessibility_h3_9": "Navigation",
+      "accessibility_p_12": "Gentleman’s Chair is committed to making our services accessible to all users. We strive to implement \n            the Israeli Standard (TI 5568) based on WCAG 2.1 Level AA guidelines.",
+      "accessibility_p_13": "We believe in equal rights and the right of every person to receive information and services \n            independently and equally. This website was designed and built with special emphasis on \n            accessibility for people with disabilities.",
+      "accessibility_p_14": "The website complies with WCAG 2.1 Level AA, which includes:",
+      "accessibility_p_15": "The website has been tested using:",
+      "accessibility_p_16": "We are continuously working to improve the accessibility of our website and update it according \n            to technological developments and user feedback.",
+      "accessibility_p_17": "If you encounter an accessibility issue on the site or need assistance, please contact us:",
+      "accessibility_p_18": "Response time: We respond to accessibility inquiries within 3 business days and work to resolve issues within 10 business days.",
+      "accessibility_p_19": "The art of the perfect shave. Tradition, precision, and craft — delivered with old-world distinction.",
+      "accessibility_p_20": "© 2026 Gentleman's Chair. All rights reserved.",
+      "home_aria_label_77": "Menu",
+      "home_aria_label_78": "Call",
+      "legal_privacy_h1_1": "Privacy Policy",
+      "legal_privacy_h2_2": "1. Information Collection",
+      "legal_privacy_h2_3": "2. Use of Information",
+      "legal_privacy_h2_4": "3. Information Sharing",
+      "legal_privacy_h2_5": "4. User Rights",
+      "legal_privacy_h2_6": "5. Cookies",
+      "legal_privacy_h2_7": "6. Information Security",
+      "legal_privacy_h2_8": "7. Policy Changes",
+      "legal_privacy_h2_9": "8. Contact Information",
+      "legal_privacy_p_10": "[business_name] (\"Company\", \"we\", \"our\") is committed to protecting your privacy. This privacy policy explains how we collect, \n            use and protect your information when you use our website www.company.com (\"Service\").",
+      "legal_privacy_p_11": "We may collect the following types of information:",
+      "legal_privacy_p_12": "We use the collected information for the following purposes:",
+      "legal_privacy_p_13": "We do not sell, rent or share your personal information with third parties, except in the following cases:",
+      "legal_privacy_p_14": "In accordance with Israeli Privacy Protection Law 1981, you have the following rights:",
+      "legal_privacy_p_15": "Our website uses cookies to improve user experience. You can manage cookies through your browser settings. \n            Disabling cookies may affect website functionality.",
+      "legal_privacy_p_16": "We implement reasonable security measures to protect your information, including encryption, firewalls and restricted access control. \n            However, no transmission or storage method is 100% secure.",
+      "legal_privacy_p_17": "We may update this privacy policy from time to time. Material changes will be posted on the website with 30 days advance notice.",
+      "legal_privacy_p_18": "For questions or requests regarding this privacy policy, please contact us:",
+      "legal_privacy_p_19": "Data Protection Authority: For complaints, you may contact the Data Protection Authority at the Ministry of Justice",
+      "legal_terms_div_49": "Last updated: May 11, 2026",
+      "legal_terms_div_50": "Use of this site constitutes agreement to the terms outlined below. Please read carefully before use.",
+      "privacy_page_title": "Privacy Policy",
+      "accessibility_h3_10": "Get In Touch",
+      "accessibility_h3_11": "Opening Hours",
+      "accessibility_li_44": "Keyboard navigation support",
+      "accessibility_li_45": "Screen reader compatibility",
+      "accessibility_li_46": "Appropriate color contrast",
+      "accessibility_li_47": "Flexible and scalable font sizes",
+      "accessibility_li_48": "Descriptive image alt text",
+      "accessibility_li_49": "Hierarchical heading structure",
+      "accessibility_li_50": "Clear and descriptive links",
+      "accessibility_li_51": "Support for 200% zoom without content loss",
+      "accessibility_li_52": "Perceivable: Information is presented in ways users can perceive",
+      "accessibility_li_53": "Operable: Interface components are operable",
+      "accessibility_li_54": "Understandable: Information and user interface are understandable",
+      "accessibility_li_55": "Robust: Content can be interpreted by a variety of technologies",
+      "accessibility_li_56": "NVDA (Windows)",
+      "accessibility_li_57": "JAWS (Windows)",
+      "accessibility_li_58": "VoiceOver (Mac/iOS)",
+      "accessibility_li_59": "TalkBack (Android)",
+      "accessibility_li_60": "Dragon NaturallySpeaking",
+      "accessibility_li_61": "Switch navigation",
+      "accessibility_li_62": "Automated accessibility testing tools",
+      "accessibility_li_63": "Manual testing with screen readers",
+      "accessibility_li_64": "Keyboard-only navigation",
+      "accessibility_li_65": "Color contrast verification",
+      "accessibility_li_66": "Testing with users with disabilities",
+      "accessibility_li_67": "Company: Gentleman’s Chair",
+      "legal_privacy_li_23": "Personal Information: Name, email address, phone number and address",
+      "legal_privacy_li_24": "Technical Information: IP address, browser type, operating system and website usage data",
+      "legal_privacy_li_25": "Cookies: Information stored on your computer to improve user experience",
+      "legal_privacy_li_26": "Providing requested services",
+      "legal_privacy_li_27": "Improving service and user experience",
+      "legal_privacy_li_28": "Contacting you regarding our services",
+      "legal_privacy_li_29": "Compliance with legal requirements",
+      "legal_privacy_li_30": "With your explicit consent",
+      "legal_privacy_li_31": "When required by law",
+      "legal_privacy_li_32": "To protect our rights or user safety",
+      "legal_privacy_li_33": "With service providers who assist in operating the service (under confidentiality agreements)",
+      "legal_privacy_li_34": "Right to access personal information stored about you",
+      "legal_privacy_li_35": "Right to correct inaccurate or incomplete information",
+      "legal_privacy_li_36": "Right to delete personal information in certain circumstances",
+      "legal_privacy_li_37": "Right to object to information processing for marketing purposes",
+      "legal_privacy_li_38": "Right to file a complaint with the Data Protection Authority",
+      "legal_privacy_li_39": "Company: [business_name]",
+      "legal_privacy_li_40": "Address: [business_address]",
+      "legal_terms_link_25": "[business_email]",
+      "legal_terms_link_26": "[business_phone]",
+      "legal_terms_link_27": "← Back to site",
+      "terms_aria_label_81": "Menu",
+      "terms_aria_label_82": "Call",
+      "accessibility_alt_73": "Gentleman’s Chair",
+      "accessibility_alt_74": "Gentleman’s Chair",
+      "accessibility_div_68": "Last updated: May 11, 2026",
+      "accessibility_div_69": "Accessibility Level: AA (Israeli Standard TI 5568)",
+      "accessibility_nav_70": "About",
+      "accessibility_nav_71": "Services",
+      "accessibility_nav_72": "Contact",
+      "legal_privacy_div_41": "Last Updated: 5/11/2026",
+      "accessibility_link_30": "[business_email]",
+      "accessibility_link_31": "[business_phone]",
+      "accessibility_link_32": "About",
+      "accessibility_link_33": "Services",
+      "accessibility_link_34": "[business_email]",
+      "accessibility_link_35": "[business_phone]",
+      "accessibility_link_36": "[business_address]",
+      "accessibility_link_37": "Mon – Fri9:00am – 7:00pm",
+      "accessibility_link_38": "Saturday9:00am – 5:00pm",
+      "accessibility_link_39": "SundayClosed",
+      "accessibility_link_40": "Privacy Policy",
+      "accessibility_link_41": "Terms & Conditions",
+      "accessibility_link_42": "Accessibility",
+      "accessibility_link_43": "Generated by Zappy",
+      "accessibility_span_21": "[business_email]",
+      "accessibility_span_22": "[business_phone]",
+      "home_meta_description": "A barber shop business looking to establish an online presence through a promotional landing page. No additional details about the shop's unique identity, atmos",
+      "legal_privacy_link_20": "[business_email]",
+      "legal_privacy_link_21": "[business_phone]",
+      "legal_privacy_link_22": "← Back to Website",
+      "privacy_aria_label_72": "Menu",
+      "privacy_aria_label_73": "Call",
+      "home_seo_twitter_title": "personal grooming hygiene — Gentleman’s Chair",
+      "legal_terms_page_title": "Terms of Use - [business_name]",
+      "terms_meta_description": "Terms of service - user rights and obligations",
+      "home_seo_og_description": "A barber shop business looking to establish an online presence through a promotional landing page. No additional details about the shop's unique identity, atmos",
+      "legal_accessibility_p_9": "[business_name] is committed to making our services accessible to all users. We strive to implement \n            the Israeli Standard (TI 5568) based on WCAG 2.1 Level AA guidelines.",
+      "accessibility_page_title": "Accessibility Statement",
+      "legal_accessibility_h1_1": "Accessibility Statement",
+      "legal_accessibility_h2_2": "1. Accessibility Policy",
+      "legal_accessibility_h2_3": "2. Accessibility Arrangements on the Site",
+      "legal_accessibility_h2_4": "3. Supported Assistive Technologies",
+      "legal_accessibility_h2_5": "4. Accessibility Testing",
+      "legal_accessibility_h2_6": "5. Continuous Improvements",
+      "legal_accessibility_h2_7": "6. Contact and Feedback",
+      "legal_accessibility_h3_8": "WCAG 2.1 Compliance",
+      "legal_accessibility_p_10": "We believe in equal rights and the right of every person to receive information and services \n            independently and equally. This website was designed and built with special emphasis on \n            accessibility for people with disabilities.",
+      "legal_accessibility_p_11": "The website complies with WCAG 2.1 Level AA, which includes:",
+      "legal_accessibility_p_12": "The website has been tested using:",
+      "legal_accessibility_p_13": "We are continuously working to improve the accessibility of our website and update it according \n            to technological developments and user feedback.",
+      "legal_accessibility_p_14": "If you encounter an accessibility issue on the site or need assistance, please contact us:",
+      "legal_accessibility_p_15": "Response time: We respond to accessibility inquiries within 3 business days and work to resolve issues within 10 business days.",
+      "legal_privacy_page_title": "Privacy Policy - [business_name]",
+      "privacy_meta_description": "Our privacy policy - how we collect, use, and protect your information",
+      "legal_accessibility_li_19": "Keyboard navigation support",
+      "legal_accessibility_li_20": "Screen reader compatibility",
+      "legal_accessibility_li_21": "Appropriate color contrast",
+      "legal_accessibility_li_22": "Flexible and scalable font sizes",
+      "legal_accessibility_li_23": "Descriptive image alt text",
+      "legal_accessibility_li_24": "Hierarchical heading structure",
+      "legal_accessibility_li_25": "Clear and descriptive links",
+      "legal_accessibility_li_26": "Support for 200% zoom without content loss",
+      "legal_accessibility_li_27": "Perceivable: Information is presented in ways users can perceive",
+      "legal_accessibility_li_28": "Operable: Interface components are operable",
+      "legal_accessibility_li_29": "Understandable: Information and user interface are understandable",
+      "legal_accessibility_li_30": "Robust: Content can be interpreted by a variety of technologies",
+      "legal_accessibility_li_31": "NVDA (Windows)",
+      "legal_accessibility_li_32": "JAWS (Windows)",
+      "legal_accessibility_li_33": "VoiceOver (Mac/iOS)",
+      "legal_accessibility_li_34": "TalkBack (Android)",
+      "legal_accessibility_li_35": "Dragon NaturallySpeaking",
+      "legal_accessibility_li_36": "Switch navigation",
+      "legal_accessibility_li_37": "Automated accessibility testing tools",
+      "legal_accessibility_li_38": "Manual testing with screen readers",
+      "legal_accessibility_li_39": "Keyboard-only navigation",
+      "legal_accessibility_li_40": "Color contrast verification",
+      "legal_accessibility_li_41": "Testing with users with disabilities",
+      "legal_accessibility_li_42": "Company: [business_name]",
+      "legal_accessibility_div_43": "Last updated: May 11, 2026",
+      "legal_accessibility_div_44": "Accessibility Level: AA (Israeli Standard TI 5568)",
+      "accessibility_aria_label_75": "Menu",
+      "accessibility_aria_label_76": "Call",
+      "legal_accessibility_link_16": "[business_email]",
+      "legal_accessibility_link_17": "[business_phone]",
+      "legal_accessibility_link_18": "← Back to site",
+      "home_seo_twitter_description": "A barber shop business looking to establish an online presence through a promotional landing page. No additional details about the shop's unique identity, atmos",
+      "accessibility_meta_description": "Our accessibility statement - our commitment to digital accessibility",
+      "legal_accessibility_page_title": "Accessibility Statement - [business_name]"
+    }
+  },
+  "es": {
+    "translation": {
+      "ecom_accountWelcome": "Welcome",
+      "ecom_addAddress": "Add Address",
+      "ecom_addBundleToCart": "Añadir {count} artículos al carrito",
+      "ecom_addToCart": "Añadir al carrito",
+      "ecom_addedToCart": "Product added to cart!",
+      "ecom_addedToFavorites": "Added to favorites",
+      "ecom_addressDeleted": "Address deleted",
+      "ecom_addressLabel": "Address Label",
+      "ecom_addressSaved": "Address saved successfully",
+      "ecom_addresses": "Addresses",
+      "ecom_agreeToTerms": "Acepto los",
+      "ecom_all": "Todos",
+      "ecom_alreadyHaveAccount": "Already have an account?",
+      "ecom_apartment": "Apt, Floor, Unit",
+      "ecom_apartmentExt": "Apt., piso, código de edificio, notas, etc.",
+      "ecom_applyCoupon": "Apply",
+      "ecom_backToProducts": "Back to Products",
+      "ecom_browseFavorites": "Discover all our products",
+      "ecom_bundleTotal": "Total del paquete",
+      "ecom_callNow": "Call Now",
+      "ecom_cancel": "Cancel",
+      "ecom_capacity": "Capacidad",
+      "ecom_cart": "Cart",
+      "ecom_category": "Category",
+      "ecom_checkout": "Finalizar compra",
+      "ecom_city": "Ciudad",
+      "ecom_cityRequired": "Por favor, introduzca su ciudad",
+      "ecom_color": "Color",
+      "ecom_confirmDelete": "Are you sure you want to delete?",
+      "ecom_contactInformation": "Contact Information",
+      "ecom_continueShopping": "Seguir comprando",
+      "ecom_continueToHomePage": "Continue to Home Page",
+      "ecom_countryRegion": "País / Región",
+      "ecom_couponApplied": "Coupon applied successfully!",
+      "ecom_couponCode": "Coupon Code",
+      "ecom_couponExpired": "Coupon has expired",
+      "ecom_couponMinOrder": "Minimum order amount",
+      "ecom_customerInfo": "Customer Info",
+      "ecom_customerLogin": "Customer Login",
+      "ecom_days": "días",
+      "ecom_defaultAddress": "Default Address",
+      "ecom_deleteAddress": "Delete Address",
+      "ecom_discount": "Descuento",
+      "ecom_editAddress": "Edit Address",
+      "ecom_editProfile": "Edit Profile",
+      "ecom_email": "Email",
+      "ecom_emailAddress": "Email Address",
+      "ecom_emailInvalid": "Por favor, introduzca un correo electrónico válido",
+      "ecom_emailRequired": "Por favor, introduzca su correo electrónico",
+      "ecom_emptyCart": "Tu carrito está vacío",
+      "ecom_enterCode": "Enter the code sent to your email",
+      "ecom_enterCouponCode": "Enter coupon code",
+      "ecom_enterEmail": "Enter your email and we'll send you a login code",
+      "ecom_errorLoading": "Error al cargar opciones",
+      "ecom_featured": "Destacados",
+      "ecom_featuredCategories": "Shop by Category",
+      "ecom_featuredProducts": "Featured Products",
+      "ecom_free": "GRATIS",
+      "ecom_freeAbove": "Gratis a partir de",
+      "ecom_frequentlyBoughtTogether": "Comprados juntos habitualmente",
+      "ecom_frequentlyBoughtTogetherSubtitle": "Ahorra tiempo y consigue todo lo que necesitas",
+      "ecom_fullName": "Full Name",
+      "ecom_haveCouponCode": "I have a coupon code",
+      "ecom_home": "Inicio",
+      "ecom_inStock": "En stock",
+      "ecom_inquiryAbout": "Inquiry about",
+      "ecom_invalidCoupon": "Invalid coupon code",
+      "ecom_items": "Items",
+      "ecom_length": "Longitud",
+      "ecom_linkCopied": "Link copied!",
+      "ecom_loadingOrder": "Loading order details...",
+      "ecom_loadingPayment": "Loading payment options...",
+      "ecom_loadingProducts": "Loading products...",
+      "ecom_loadingShipping": "Loading shipping methods...",
+      "ecom_loggedInAs": "Logged in as:",
+      "ecom_login": "Login",
+      "ecom_loginHere": "Login here",
+      "ecom_loginToFavorite": "Log in to save favorites",
+      "ecom_logout": "Logout",
+      "ecom_material": "Material",
+      "ecom_mobileNumber": "Mobile Number",
+      "ecom_myAccount": "My Account",
+      "ecom_myFavorites": "My Favorites",
+      "ecom_name": "Name",
+      "ecom_nameRequired": "Por favor, introduzca su nombre completo",
+      "ecom_new": "Nuevos",
+      "ecom_next": "Next",
+      "ecom_noAddresses": "No saved addresses",
+      "ecom_noFavorites": "No favorites yet",
+      "ecom_noFeaturedProducts": "No featured products yet. Check out all our products!",
+      "ecom_noOrders": "No orders yet",
+      "ecom_noProducts": "No products to display",
+      "ecom_noShippingMethods": "No hay opciones de envío disponibles",
+      "ecom_notLoggedIn": "Not Logged In",
+      "ecom_orderConfirmation": "A confirmation email has been sent to you",
+      "ecom_orderDate": "Date",
+      "ecom_orderDetails": "Order Details",
+      "ecom_orderItems": "Order Items",
+      "ecom_orderNotFound": "Order not found",
+      "ecom_orderNumber": "Order Number",
+      "ecom_orderProcessing": "Your order is being processed. We'll notify you when it ships.",
+      "ecom_orderStatus": "Status",
+      "ecom_orderSuccess": "Order Received!",
+      "ecom_orderSummary": "Order Summary",
+      "ecom_orderTotal": "Total",
+      "ecom_other": "Other",
+      "ecom_ourProducts": "Our Products",
+      "ecom_outOfStock": "Agotado",
+      "ecom_paidAmount": "Amount Paid",
+      "ecom_payment": "Payment",
+      "ecom_paymentMethod": "Payment Method",
+      "ecom_paymentNotConfigured": "Online payment not configured",
+      "ecom_personalDetails": "Personal Details",
+      "ecom_phone": "Phone",
+      "ecom_phoneRequired": "Por favor, introduzca su número de teléfono",
+      "ecom_placeOrder": "Place Order",
+      "ecom_pleaseAcceptTerms": "Por favor, acepte los términos y condiciones",
+      "ecom_pleaseLogin": "Please login to view your account",
+      "ecom_pleaseSelect": "Please select",
+      "ecom_proceedToCheckout": "Proceder al pago",
+      "ecom_productDetails": "Detalles del producto",
+      "ecom_productNotFound": "Product not found",
+      "ecom_products": "Productos",
+      "ecom_profileUpdated": "Profile updated successfully",
+      "ecom_quantity": "Cantidad",
+      "ecom_relatedProducts": "Productos relacionados",
+      "ecom_remove": "Eliminar",
+      "ecom_removeCoupon": "Remove",
+      "ecom_removeFromFavorites": "Remove from Favorites",
+      "ecom_removedFromFavorites": "Removed from favorites",
+      "ecom_returnPolicy": "Return Policy",
+      "ecom_sale": "Ofertas",
+      "ecom_saveAddressForNextTime": "Guardar esta dirección para la próxima vez",
+      "ecom_saveChanges": "Save Changes",
+      "ecom_saveToFavorites": "Save to Favorites",
+      "ecom_saving": "Saving...",
+      "ecom_searchProducts": "Search products",
+      "ecom_selectVariant": "Select option",
+      "ecom_sendCode": "Send Code",
+      "ecom_sendInquiry": "Send Inquiry",
+      "ecom_setAsDefault": "Set as Default",
+      "ecom_shareProduct": "Share Product",
+      "ecom_shipping": "Envío",
+      "ecom_shippingAddress": "Shipping Address",
+      "ecom_shippingMethod": "Shipping Method",
+      "ecom_shippingRequired": "Por favor, seleccione un método de envío",
+      "ecom_signInHere": "Sign in here",
+      "ecom_size": "Talla",
+      "ecom_sku": "SKU",
+      "ecom_specifications": "Especificaciones",
+      "ecom_startingAt": "Desde",
+      "ecom_stateProvince": "Estado / Provincia",
+      "ecom_stateRequired": "Por favor, seleccione un estado / provincia",
+      "ecom_statusCancelled": "Cancelled",
+      "ecom_statusDelivered": "Delivered",
+      "ecom_statusPaid": "Paid",
+      "ecom_statusPending": "Pending Payment",
+      "ecom_statusProcessing": "Processing",
+      "ecom_statusShipped": "Shipped",
+      "ecom_storeNote": "Información adicional",
+      "ecom_street": "Street Address",
+      "ecom_streetAndNumber": "Calle y número",
+      "ecom_streetRequired": "Por favor, introduzca su dirección",
+      "ecom_style": "Estilo",
+      "ecom_subtotal": "Subtotal",
+      "ecom_termsAndConditions": "Términos y Condiciones",
+      "ecom_thankYouOrder": "Thank you for your order",
+      "ecom_total": "Total",
+      "ecom_totalToPay": "Total a Pagar",
+      "ecom_transactionDate": "Transaction Date",
+      "ecom_upsellFree": "Gratis",
+      "ecom_variantUnavailable": "Unavailable",
+      "ecom_vat": "VAT",
+      "ecom_vatIncluded": "IVA incluido",
+      "ecom_verificationCode": "Verification Code",
+      "ecom_verify": "Verify",
+      "ecom_viewAllResults": "View all results",
+      "ecom_viewDetails": "Ver detalles",
+      "ecom_viewOrder": "View Order",
+      "ecom_weight": "Peso",
+      "ecom_work": "Work",
+      "ecom_yourCart": "Tu carrito",
+      "ecom_yourOrders": "Your Orders",
+      "ecom_zip": "ZIP Code",
+      "ecom_zipPostal": "Código postal",
+      "home_h1_1": "La Confianza\n        \n          \n          Es\n          \n        \n        Nuestro Arte.",
+      "home_h2_2": "Más Que un Corte.\n\n          Es un Ritual.",
+      "home_h2_3": "Looks Impecables. Estándares Atemporales.",
+      "home_h2_4": "Tu Mejor Look\n\n        Comienza Aquí.",
+      "home_h3_5": "Precisión. Estilo. Carácter.",
+      "home_h3_6": "Cortes",
+      "home_h3_7": "Afeitados",
+      "home_h3_8": "Cuidado de Barba",
+      "home_h3_9": "Arreglo Personal",
+      "home_p_13": "Un Corte Superior.",
+      "home_p_14": "Hecho a Tu Medida.",
+      "home_p_15": "Acerca de la Chair",
+      "home_p_16": "En Gentleman's Chair, creemos que la higiene del arreglo personal es una parte esencial del estilo de vida del caballero moderno. Cada corte, afeitado y recorte de barba se entrega con precisión, pasión y propósito — un acto deliberado de autocuidado que honra tu tiempo y tu oficio.",
+      "home_p_17": "Hemos construido un espacio donde la artesanía del viejo mundo se encuentra con la confianza silenciosa. Toma asiento. Estás en buenas manos.",
+      "home_p_18": "Cortes clásicos. Estilo moderno. Siempre hechos a tu medida — desde degradados atemporales hasta formas afiladas y esculpidas que definen el arreglo personal en su máxima expresión.",
+      "home_p_19": "Afeitados tradicionales con toalla caliente para el acabado más suave. Cuidado personal de grado ritual — una ceremonia, no solo un servicio.",
+      "home_p_20": "Dar forma, recortar y nutrir. Porque el detalle te define. Esculpido y acondicionamiento experto de barba para el caballero moderno.",
+      "home_p_21": "Productos premium para cabello, barba y piel. Selecciones curadas para la higiene del arreglo personal que elevan tu ritual diario.",
+      "home_p_22": "Entra. Destácate.",
+      "home_p_23": "Experimenta el arte del arreglo personal en un espacio diseñado para caballeros como tú. Cada visita es un ritual — precisión, cuidado y arte.",
+      "home_p_24": "El arte del afeitado perfecto. Tradición, precisión y arte — entregado con distinción del viejo mundo.",
+      "home_p_25": "© 2026 Gentleman's Chair. Todos los derechos reservados.",
+      "home_h3_10": "Navegación",
+      "home_h3_11": "Contáctanos",
+      "home_h3_12": "Horarios de Atención",
+      "terms_h1_1": "Términos de Uso",
+      "terms_h2_2": "1. Definiciones",
+      "terms_h2_3": "2. Descripción de Servicios",
+      "terms_h2_4": "3. Términos de Uso",
+      "terms_h2_5": "4. Obligaciones del Usuario",
+      "terms_h2_6": "5. Política de Pago y Reembolso",
+      "terms_h2_7": "6. Limitación de Responsabilidad",
+      "terms_h2_8": "7. Derechos de Autor y Propiedad Intelectual",
+      "terms_h2_9": "8. Privacidad",
+      "terms_p_18": "Gentleman's Chair proporciona servicios de cuidado personal y aseo a través del sitio. Los servicios están sujetos a los términos \n            detallados en este documento y pueden cambiar de vez en cuando.",
+      "terms_p_19": "El uso del sitio está condicionado al cumplimiento de los siguientes términos:",
+      "terms_p_20": "Si los servicios incluyen pago:",
+      "terms_p_21": "Los servicios se proporcionan \"tal como están\" sin garantía de ningún tipo. La Empresa no será responsable por daños indirectos, \n            consecuenciales o especiales que surjan del uso del sitio, excepto cuando lo requiera la ley.",
+      "terms_p_22": "Todo el contenido del sitio, incluyendo texto, imágenes, diseño y código, está protegido por derechos de autor propiedad de Gentleman's Chair. \n            La reproducción, distribución o uso comercial del contenido está prohibido sin permiso por escrito.",
+      "terms_p_23": "La recopilación y uso de información personal está sujeta a nuestra Política de Privacidad. El uso del sitio constituye \n            acuerdo con la Política de Privacidad como se detalla por separado.",
+      "terms_p_24": "La Empresa puede cambiar estos términos de uso en cualquier momento. Los cambios importantes se publicarán en el sitio con \n            30 días de aviso previo. El uso continuado después de los cambios constituye acuerdo con los nuevos términos.",
+      "terms_p_25": "La Empresa puede suspender o limitar el servicio en cualquier momento, incluyendo en casos de violaciones de los términos de uso. \n            En caso de terminación del servicio, las disposiciones relevantes permanecerán en efecto.",
+      "terms_p_26": "Estos términos de uso se rigen por las leyes aplicables. Cualquier disputa se resolverá de acuerdo con \n            la jurisdicción local, con preferencia dada al arbitraje o mediación cuando sea posible.",
+      "terms_p_27": "Para preguntas o aclaraciones sobre los términos de uso:",
+      "terms_p_28": "El arte del afeitado perfecto. Tradición, precisión y artesanía — entregados con distinción del viejo mundo.",
+      "terms_p_29": "© 2026 Gentleman's Chair. Todos los derechos reservados.",
+      "home_alt_69": "Gentleman's Chair",
+      "home_alt_70": "Silla de barbero clásica de cuero negro en interior vintage de barbería con iluminación cálida ámbar",
+      "home_alt_71": "Icono de tijeras doradas para servicios de corte de cabello",
+      "home_alt_72": "Icono de navaja de afeitar recta dorada para servicios de afeitado",
+      "home_alt_73": "Icono de silueta de barba dorada para servicios de cuidado de barba",
+      "home_alt_74": "Icono de botella de producto de aseo dorada para servicios de cuidado personal",
+      "home_alt_75": "Composición plana de barbería con navaja recta, brocha de afeitar y lata de aseo sobre cuero oscuro",
+      "home_alt_76": "Gentleman's Chair",
+      "home_div_65": "Desplázate\n      Hacia Abajo\n      ↓",
+      "home_nav_66": "Acerca de",
+      "home_nav_67": "Servicios",
+      "home_nav_68": "Contacto",
+      "terms_h2_10": "9. Cambios a los Términos de Uso",
+      "terms_h2_11": "10. Terminación del Servicio",
+      "terms_h2_12": "11. Ley Aplicable y Resolución de Disputas",
+      "terms_h2_13": "12. Disposiciones Generales",
+      "terms_h2_14": "13. Información de Contacto",
+      "terms_h3_15": "Navegación",
+      "terms_h3_16": "Ponte en Contacto",
+      "terms_h3_17": "Horarios de Atención",
+      "terms_li_53": "\"Empresa\" - Gentleman's Chair",
+      "terms_li_54": "\"Usuario\" - Cualquier persona que navegue o use el sitio",
+      "terms_li_55": "\"Servicios\" - cuidado personal y arreglo personal proporcionados a través del sitio",
+      "terms_li_56": "Uso del sitio únicamente para fines legales",
+      "terms_li_57": "No interferir con las operaciones del sitio o con otros usuarios",
+      "terms_li_58": "No subir contenido ofensivo, ilegal o dañino",
+      "terms_li_59": "Respeto por los derechos de autor y propiedad intelectual",
+      "terms_li_60": "No realizar acciones que puedan comprometer la seguridad del sitio",
+      "terms_li_61": "Proporcionar información precisa y veraz durante el registro o pedido",
+      "terms_li_62": "Mantener la confidencialidad de los detalles de acceso a la cuenta",
+      "terms_li_63": "Notificación inmediata de cualquier uso no autorizado de la cuenta",
+      "terms_li_64": "Actualizar la información personal según sea necesario",
+      "terms_li_65": "Los pagos se procesan a través de sistemas seguros y encriptados",
+      "terms_li_66": "Los precios incluyen los impuestos aplicables según lo requerido por la ley",
+      "terms_li_67": "El derecho de cancelación estará de acuerdo con las leyes de protección al consumidor",
+      "terms_li_68": "Los reembolsos se procesarán dentro de 14 días hábiles de la aprobación de cancelación",
+      "terms_li_69": "Si alguna parte de los términos se considera inválida, los términos restantes permanecerán en vigor",
+      "terms_li_70": "La no aplicación de un derecho no se considerará una renuncia",
+      "terms_li_71": "Estos términos de uso constituyen el acuerdo completo entre las partes",
+      "terms_li_72": "Empresa: Gentleman's Chair",
+      "terms_li_73": "Dirección: [business_address]",
+      "home_link_44": "Ir al contenido principal",
+      "home_link_45": "Reserva Tu Experiencia",
+      "home_link_46": "Nuestra Historia ›",
+      "home_link_47": "Saber Más ›",
+      "home_link_48": "Saber Más ›",
+      "home_link_49": "Saber Más ›",
+      "home_link_50": "Saber Más ›",
+      "home_link_51": "Reservar Cita",
+      "home_link_52": "Explorar Servicios",
+      "home_link_53": "Acerca de",
+      "home_link_54": "Servicios",
+      "home_link_55": "[business_email]",
+      "home_link_56": "[business_phone]",
+      "home_link_57": "[business_address]",
+      "home_link_58": "Lun – Vie9:00am – 7:00pm",
+      "home_link_59": "Sábado9:00am – 5:00pm",
+      "home_link_60": "DomingoCerrado",
+      "home_link_61": "Política de Privacidad",
+      "home_link_62": "Términos y Condiciones",
+      "home_link_63": "Accesibilidad",
+      "home_link_64": "Generado por Zappy",
+      "home_span_33": "Nuestros Servicios",
+      "home_span_35": "[business_email]",
+      "home_span_36": "[business_phone]",
+      "privacy_h1_1": "Política de Privacidad",
+      "privacy_h2_2": "1. Recopilación de Información",
+      "privacy_h2_3": "2. Uso de la Información",
+      "privacy_h2_4": "3. Compartir Información",
+      "privacy_h2_5": "4. Derechos del Usuario",
+      "privacy_h2_6": "5. Cookies",
+      "privacy_h2_7": "6. Seguridad de la Información",
+      "privacy_h2_8": "7. Cambios en la Política",
+      "privacy_h2_9": "8. Información de Contacto",
+      "privacy_p_13": "Gentleman's Chair (\"Empresa\", \"nosotros\", \"nuestro\") está comprometido a proteger su privacidad. Esta política de privacidad explica cómo recopilamos, \n            usamos y protegemos su información cuando utiliza nuestro sitio web [business_website] (\"Servicio\").",
+      "privacy_p_14": "Podemos recopilar los siguientes tipos de información:",
+      "privacy_p_15": "Utilizamos la información recopilada para los siguientes propósitos:",
+      "privacy_p_16": "No vendemos, alquilamos ni compartimos su información personal con terceros, excepto en los siguientes casos:",
+      "privacy_p_17": "De acuerdo con la Ley de Protección de Privacidad de Israel de 1981, usted tiene los siguientes derechos:",
+      "privacy_p_18": "Nuestro sitio web utiliza cookies para mejorar la experiencia del usuario. Puede gestionar las cookies a través de la configuración de su navegador. \n            Deshabilitar las cookies puede afectar la funcionalidad del sitio web.",
+      "privacy_p_19": "Implementamos medidas de seguridad razonables para proteger su información, incluyendo cifrado, cortafuegos y control de acceso restringido. \n            Sin embargo, ningún método de transmisión o almacenamiento es 100% seguro.",
+      "privacy_p_20": "Podemos actualizar esta política de privacidad de vez en cuando. Los cambios importantes se publicarán en el sitio web con 30 días de aviso previo.",
+      "privacy_p_21": "Para preguntas o solicitudes sobre esta política de privacidad, por favor contáctenos:",
+      "privacy_p_22": "Autoridad de Protección de Datos: Para quejas, puede contactar a la Autoridad de Protección de Datos en el Ministerio de Justicia",
+      "privacy_p_23": "El arte del afeitado perfecto. Tradición, precisión y artesanía — entregados con distinción del viejo mundo.",
+      "privacy_p_24": "© 2026 Gentleman's Chair. Todos los derechos reservados.",
+      "terms_alt_79": "Gentleman's Chair",
+      "terms_alt_80": "Gentleman's Chair",
+      "terms_div_74": "Última actualización: 11 de mayo de 2026",
+      "terms_div_75": "El uso de este sitio constituye la aceptación de los términos descritos a continuación. Por favor, lea cuidadosamente antes de usar.",
+      "terms_nav_76": "Acerca de",
+      "terms_nav_77": "Servicios",
+      "terms_nav_78": "Contacto",
+      "privacy_h3_10": "Navegación",
+      "privacy_h3_11": "Ponte en Contacto",
+      "privacy_h3_12": "Horarios de Apertura",
+      "privacy_li_48": "Información Personal: Nombre, dirección de correo electrónico, número de teléfono y dirección",
+      "privacy_li_49": "Información Técnica: Dirección IP, tipo de navegador, sistema operativo y datos de uso del sitio web",
+      "privacy_li_50": "Cookies: Información almacenada en su computadora para mejorar la experiencia del usuario",
+      "privacy_li_51": "Proporcionar servicios solicitados",
+      "privacy_li_52": "Mejorar el servicio y la experiencia del usuario",
+      "privacy_li_53": "Contactarlo con respecto a nuestros servicios",
+      "privacy_li_54": "Cumplimiento con requisitos legales",
+      "privacy_li_55": "Con su consentimiento explícito",
+      "privacy_li_56": "Cuando sea requerido por ley",
+      "privacy_li_57": "Para proteger nuestros derechos o la seguridad del usuario",
+      "privacy_li_58": "Con proveedores de servicios que ayudan en la operación del servicio (bajo acuerdos de confidencialidad)",
+      "privacy_li_59": "Derecho a acceder a la información personal almacenada sobre usted",
+      "privacy_li_60": "Derecho a corregir información inexacta o incompleta",
+      "privacy_li_61": "Derecho a eliminar información personal en ciertas circunstancias",
+      "privacy_li_62": "Derecho a objetar el procesamiento de información para fines de marketing",
+      "privacy_li_63": "Derecho a presentar una queja ante la Autoridad de Protección de Datos",
+      "privacy_li_64": "Empresa: Gentleman's Chair",
+      "privacy_li_65": "Dirección: [business_address]",
+      "terms_link_39": "[business_email]",
+      "terms_link_40": "[business_phone]",
+      "terms_link_41": "Acerca de",
+      "terms_link_42": "Servicios",
+      "terms_link_43": "[business_email]",
+      "terms_link_44": "[business_phone]",
+      "terms_link_45": "[business_address]",
+      "terms_link_46": "Lun – Vie9:00am – 7:00pm",
+      "terms_link_47": "Sábado9:00am – 5:00pm",
+      "terms_link_48": "DomingoCerrado",
+      "terms_link_49": "Política de Privacidad",
+      "terms_link_50": "Términos y Condiciones",
+      "terms_link_51": "Accesibilidad",
+      "terms_link_52": "Generado por Zappy",
+      "terms_span_30": "[business_email]",
+      "terms_span_31": "[business_phone]",
+      "privacy_alt_70": "Gentleman's Chair",
+      "privacy_alt_71": "Gentleman's Chair",
+      "privacy_div_66": "Última Actualización: 5/11/2026",
+      "privacy_nav_67": "Acerca de",
+      "privacy_nav_68": "Servicios",
+      "privacy_nav_69": "Contacto",
+      "home_page_title": "higiene y cuidado personal — Gentleman's Chair",
+      "privacy_link_34": "[business_email]",
+      "privacy_link_35": "[business_phone]",
+      "privacy_link_36": "Acerca de",
+      "privacy_link_37": "Servicios",
+      "privacy_link_38": "[business_email]",
+      "privacy_link_39": "[business_phone]",
+      "privacy_link_40": "[business_address]",
+      "privacy_link_41": "Lun – Vie9:00am – 7:00pm",
+      "privacy_link_42": "Sábado9:00am – 5:00pm",
+      "privacy_link_43": "DomingoCerrado",
+      "privacy_link_44": "Política de Privacidad",
+      "privacy_link_45": "Términos y Condiciones",
+      "privacy_link_46": "Accesibilidad",
+      "privacy_link_47": "Generado por Zappy",
+      "privacy_span_25": "[business_email]",
+      "privacy_span_26": "[business_phone]",
+      "legal_terms_h1_1": "Términos de Uso",
+      "legal_terms_h2_2": "1. Definiciones",
+      "legal_terms_h2_3": "2. Descripción de Servicios",
+      "legal_terms_h2_4": "3. Términos de Uso",
+      "legal_terms_h2_5": "4. Obligaciones del Usuario",
+      "legal_terms_h2_6": "5. Política de Pago y Reembolso",
+      "legal_terms_h2_7": "6. Limitación de Responsabilidad",
+      "legal_terms_h2_8": "7. Derechos de Autor y Propiedad Intelectual",
+      "legal_terms_h2_9": "8. Privacidad",
+      "legal_terms_p_15": "[business_name] proporciona servicios generales a través del sitio. Los servicios están sujetos a los términos \n            detallados en este documento y pueden cambiar de vez en cuando.",
+      "legal_terms_p_16": "El uso del sitio está condicionado al cumplimiento de los siguientes términos:",
+      "legal_terms_p_17": "Si los servicios incluyen pago:",
+      "legal_terms_p_18": "Los servicios se proporcionan \"tal como están\" sin garantía de ningún tipo. La Empresa no será responsable por daños indirectos, \n            consecuenciales o especiales que surjan del uso del sitio, excepto cuando sea requerido por ley.",
+      "legal_terms_p_19": "Todo el contenido del sitio, incluyendo texto, imágenes, diseño y código, está protegido por derechos de autor propiedad de [business_name]. \n            La reproducción, distribución o uso comercial del contenido está prohibido sin permiso por escrito.",
+      "legal_terms_p_20": "La recopilación y uso de información personal está sujeta a nuestra Política de Privacidad. El uso del sitio constituye \n            acuerdo con la Política de Privacidad como se detalla por separado.",
+      "legal_terms_p_21": "La Empresa puede cambiar estos términos de uso en cualquier momento. Los cambios importantes se publicarán en el sitio con \n            30 días de aviso previo. El uso continuado después de los cambios constituye acuerdo con los nuevos términos.",
+      "legal_terms_p_22": "La Empresa puede suspender o limitar el servicio en cualquier momento, incluyendo en casos de violaciones de los términos de uso. \n            En caso de terminación del servicio, las disposiciones relevantes permanecerán en efecto.",
+      "legal_terms_p_23": "Estos términos de uso se rigen por las leyes aplicables. Cualquier disputa se resolverá de acuerdo con \n            la jurisdicción local, con preferencia dada al arbitraje o mediación cuando sea posible.",
+      "legal_terms_p_24": "Para preguntas o aclaraciones sobre los términos de uso:",
+      "terms_page_title": "Términos y Condiciones",
+      "home_seo_keywords": "higiene y cuidado personal, cuidado personal, Gentleman's Chair, gentleman's chair",
+      "home_seo_og_title": "higiene y cuidado personal — Gentleman's Chair",
+      "legal_terms_h2_10": "9. Cambios a los Términos de Uso",
+      "legal_terms_h2_11": "10. Terminación del Servicio",
+      "legal_terms_h2_12": "11. Ley Aplicable y Resolución de Disputas",
+      "legal_terms_h2_13": "12. Disposiciones Generales",
+      "legal_terms_h2_14": "13. Información de Contacto",
+      "legal_terms_li_28": "\"Empresa\" - [business_name]",
+      "legal_terms_li_29": "\"Usuario\" - Cualquier persona que navegue o use el sitio",
+      "legal_terms_li_30": "\"Servicios\" - servicios generales proporcionados a través del sitio",
+      "legal_terms_li_31": "Uso del sitio solo para propósitos legales",
+      "legal_terms_li_32": "No interferir con las operaciones del sitio u otros usuarios",
+      "legal_terms_li_33": "No subir contenido ofensivo, ilegal o dañino",
+      "legal_terms_li_34": "Respetar los derechos de autor y propiedad intelectual",
+      "legal_terms_li_35": "No realizar acciones que puedan comprometer la seguridad del sitio",
+      "legal_terms_li_36": "Proporcionar información precisa y veraz durante el registro o pedidos",
+      "legal_terms_li_37": "Mantener la confidencialidad de los detalles de acceso a la cuenta",
+      "legal_terms_li_38": "Notificación inmediata de cualquier uso no autorizado de la cuenta",
+      "legal_terms_li_39": "Actualizar la información personal según sea necesario",
+      "legal_terms_li_40": "Los pagos se procesan a través de sistemas seguros y encriptados",
+      "legal_terms_li_41": "Los precios incluyen impuestos aplicables según lo requerido por ley",
+      "legal_terms_li_42": "El derecho a cancelar estará de acuerdo con las leyes de protección al consumidor",
+      "legal_terms_li_43": "Los reembolsos se procesarán dentro de 14 días hábiles de la aprobación de cancelación",
+      "legal_terms_li_44": "Si alguna parte de los términos se considera inválida, los términos restantes permanecerán en efecto",
+      "legal_terms_li_45": "La no aplicación de un derecho no se considerará una renuncia",
+      "legal_terms_li_46": "Estos términos de uso constituyen el acuerdo completo entre las partes",
+      "legal_terms_li_47": "Empresa: [business_name]",
+      "legal_terms_li_48": "Dirección: [business_address]",
+      "accessibility_h1_1": "Declaración de Accesibilidad",
+      "accessibility_h2_2": "1. Política de Accesibilidad",
+      "accessibility_h2_3": "2. Disposiciones de Accesibilidad en el Sitio",
+      "accessibility_h2_4": "3. Tecnologías de Asistencia Compatibles",
+      "accessibility_h2_5": "4. Pruebas de Accesibilidad",
+      "accessibility_h2_6": "5. Mejoras Continuas",
+      "accessibility_h2_7": "6. Contacto y Comentarios",
+      "accessibility_h3_8": "Cumplimiento WCAG 2.1",
+      "accessibility_h3_9": "Navegación",
+      "accessibility_p_12": "Gentleman's Chair está comprometido a hacer que nuestros servicios sean accesibles para todos los usuarios. Nos esforzamos por implementar \n            el Estándar Israelí (TI 5568) basado en las pautas WCAG 2.1 Nivel AA.",
+      "accessibility_p_13": "Creemos en la igualdad de derechos y el derecho de cada persona a recibir información y servicios \n            de forma independiente e igualitaria. Este sitio web fue diseñado y construido con especial énfasis en \n            la accesibilidad para personas con discapacidades.",
+      "accessibility_p_14": "El sitio web cumple con WCAG 2.1 Nivel AA, que incluye:",
+      "accessibility_p_15": "El sitio web ha sido probado usando:",
+      "accessibility_p_16": "Trabajamos continuamente para mejorar la accesibilidad de nuestro sitio web y actualizarlo según \n            los desarrollos tecnológicos y los comentarios de los usuarios.",
+      "accessibility_p_17": "Si encuentras un problema de accesibilidad en el sitio o necesitas asistencia, por favor contáctanos:",
+      "accessibility_p_18": "Tiempo de respuesta: Respondemos a consultas de accesibilidad dentro de 3 días hábiles y trabajamos para resolver problemas dentro de 10 días hábiles.",
+      "accessibility_p_19": "El arte del afeitado perfecto. Tradición, precisión y artesanía — entregados con distinción del viejo mundo.",
+      "accessibility_p_20": "© 2026 Gentleman's Chair. Todos los derechos reservados.",
+      "home_aria_label_77": "Menú",
+      "home_aria_label_78": "Llamar",
+      "legal_privacy_h1_1": "Política de Privacidad",
+      "legal_privacy_h2_2": "1. Recopilación de Información",
+      "legal_privacy_h2_3": "2. Uso de la Información",
+      "legal_privacy_h2_4": "3. Compartir Información",
+      "legal_privacy_h2_5": "4. Derechos del Usuario",
+      "legal_privacy_h2_6": "5. Cookies",
+      "legal_privacy_h2_7": "6. Seguridad de la Información",
+      "legal_privacy_h2_8": "7. Cambios en la Política",
+      "legal_privacy_h2_9": "8. Información de Contacto",
+      "legal_privacy_p_10": "[business_name] (\"Empresa\", \"nosotros\", \"nuestro\") está comprometido a proteger su privacidad. Esta política de privacidad explica cómo recopilamos, \n            usamos y protegemos su información cuando usa nuestro sitio web www.company.com (\"Servicio\").",
+      "legal_privacy_p_11": "Podemos recopilar los siguientes tipos de información:",
+      "legal_privacy_p_12": "Usamos la información recopilada para los siguientes propósitos:",
+      "legal_privacy_p_13": "No vendemos, alquilamos o compartimos su información personal con terceros, excepto en los siguientes casos:",
+      "legal_privacy_p_14": "De acuerdo con la Ley de Protección de Privacidad de Israel de 1981, usted tiene los siguientes derechos:",
+      "legal_privacy_p_15": "Nuestro sitio web utiliza cookies para mejorar la experiencia del usuario. Puede gestionar las cookies a través de la configuración de su navegador. \n            Desactivar las cookies puede afectar la funcionalidad del sitio web.",
+      "legal_privacy_p_16": "Implementamos medidas de seguridad razonables para proteger su información, incluyendo encriptación, firewalls y control de acceso restringido. \n            Sin embargo, ningún método de transmisión o almacenamiento es 100% seguro.",
+      "legal_privacy_p_17": "Podemos actualizar esta política de privacidad de vez en cuando. Los cambios importantes se publicarán en el sitio web con 30 días de aviso previo.",
+      "legal_privacy_p_18": "Para preguntas o solicitudes sobre esta política de privacidad, por favor contáctenos:",
+      "legal_privacy_p_19": "Autoridad de Protección de Datos: Para quejas, puede contactar a la Autoridad de Protección de Datos en el Ministerio de Justicia",
+      "legal_terms_div_49": "Última actualización: 11 de mayo de 2026",
+      "legal_terms_div_50": "El uso de este sitio constituye acuerdo con los términos descritos a continuación. Por favor lea cuidadosamente antes del uso.",
+      "privacy_page_title": "Política de Privacidad",
+      "accessibility_h3_10": "Ponte en Contacto",
+      "accessibility_h3_11": "Horarios de Atención",
+      "accessibility_li_44": "Soporte de navegación por teclado",
+      "accessibility_li_45": "Compatibilidad con lectores de pantalla",
+      "accessibility_li_46": "Contraste de color apropiado",
+      "accessibility_li_47": "Tamaños de fuente flexibles y escalables",
+      "accessibility_li_48": "Texto alternativo descriptivo para imágenes",
+      "accessibility_li_49": "Estructura jerárquica de encabezados",
+      "accessibility_li_50": "Enlaces claros y descriptivos",
+      "accessibility_li_51": "Soporte para zoom del 200% sin pérdida de contenido",
+      "accessibility_li_52": "Perceptible: La información se presenta de manera que los usuarios puedan percibirla",
+      "accessibility_li_53": "Operable: Los componentes de la interfaz son operables",
+      "accessibility_li_54": "Comprensible: La información y la interfaz de usuario son comprensibles",
+      "accessibility_li_55": "Robusto: El contenido puede ser interpretado por una variedad de tecnologías",
+      "accessibility_li_56": "NVDA (Windows)",
+      "accessibility_li_57": "JAWS (Windows)",
+      "accessibility_li_58": "VoiceOver (Mac/iOS)",
+      "accessibility_li_59": "TalkBack (Android)",
+      "accessibility_li_60": "Dragon NaturallySpeaking",
+      "accessibility_li_61": "Navegación por interruptores",
+      "accessibility_li_62": "Herramientas automatizadas de pruebas de accesibilidad",
+      "accessibility_li_63": "Pruebas manuales con lectores de pantalla",
+      "accessibility_li_64": "Navegación solo por teclado",
+      "accessibility_li_65": "Verificación de contraste de color",
+      "accessibility_li_66": "Pruebas con usuarios con discapacidades",
+      "accessibility_li_67": "Empresa: Gentleman's Chair",
+      "legal_privacy_li_23": "Información Personal: Nombre, dirección de correo electrónico, número de teléfono y dirección",
+      "legal_privacy_li_24": "Información Técnica: Dirección IP, tipo de navegador, sistema operativo y datos de uso del sitio web",
+      "legal_privacy_li_25": "Cookies: Información almacenada en su computadora para mejorar la experiencia del usuario",
+      "legal_privacy_li_26": "Proporcionar servicios solicitados",
+      "legal_privacy_li_27": "Mejorar el servicio y la experiencia del usuario",
+      "legal_privacy_li_28": "Contactarlo sobre nuestros servicios",
+      "legal_privacy_li_29": "Cumplimiento con requisitos legales",
+      "legal_privacy_li_30": "Con su consentimiento explícito",
+      "legal_privacy_li_31": "Cuando sea requerido por ley",
+      "legal_privacy_li_32": "Para proteger nuestros derechos o la seguridad del usuario",
+      "legal_privacy_li_33": "Con proveedores de servicios que ayudan en la operación del servicio (bajo acuerdos de confidencialidad)",
+      "legal_privacy_li_34": "Derecho a acceder a la información personal almacenada sobre usted",
+      "legal_privacy_li_35": "Derecho a corregir información inexacta o incompleta",
+      "legal_privacy_li_36": "Derecho a eliminar información personal en ciertas circunstancias",
+      "legal_privacy_li_37": "Derecho a objetar el procesamiento de información para fines de marketing",
+      "legal_privacy_li_38": "Derecho a presentar una queja ante la Autoridad de Protección de Datos",
+      "legal_privacy_li_39": "Empresa: [business_name]",
+      "legal_privacy_li_40": "Dirección: [business_address]",
+      "legal_terms_link_25": "[business_email]",
+      "legal_terms_link_26": "[business_phone]",
+      "legal_terms_link_27": "← Volver al sitio",
+      "terms_aria_label_81": "Menú",
+      "terms_aria_label_82": "Llamar",
+      "accessibility_alt_73": "Gentleman's Chair",
+      "accessibility_alt_74": "Gentleman's Chair",
+      "accessibility_div_68": "Última actualización: 11 de mayo de 2026",
+      "accessibility_div_69": "Nivel de Accesibilidad: AA (Estándar Israelí TI 5568)",
+      "accessibility_nav_70": "Acerca de",
+      "accessibility_nav_71": "Servicios",
+      "accessibility_nav_72": "Contacto",
+      "legal_privacy_div_41": "Última Actualización: 5/11/2026",
+      "accessibility_link_30": "[business_email]",
+      "accessibility_link_31": "[business_phone]",
+      "accessibility_link_32": "Acerca de",
+      "accessibility_link_33": "Servicios",
+      "accessibility_link_34": "[business_email]",
+      "accessibility_link_35": "[business_phone]",
+      "accessibility_link_36": "[business_address]",
+      "accessibility_link_37": "Lun – Vie9:00am – 7:00pm",
+      "accessibility_link_38": "Sábado9:00am – 5:00pm",
+      "accessibility_link_39": "DomingoCerrado",
+      "accessibility_link_40": "Política de Privacidad",
+      "accessibility_link_41": "Términos y Condiciones",
+      "accessibility_link_42": "Accesibilidad",
+      "accessibility_link_43": "Generado por Zappy",
+      "accessibility_span_21": "[business_email]",
+      "accessibility_span_22": "[business_phone]",
+      "home_meta_description": "Una barbería que busca establecer presencia en línea a través de una página de aterrizaje promocional. Sin detalles adicionales sobre la identidad única de la barbería, atmós",
+      "legal_privacy_link_20": "[business_email]",
+      "legal_privacy_link_21": "[business_phone]",
+      "legal_privacy_link_22": "← Volver al sitio web",
+      "privacy_aria_label_72": "Menú",
+      "privacy_aria_label_73": "Llamar",
+      "home_seo_twitter_title": "higiene y cuidado personal — Gentleman's Chair",
+      "legal_terms_page_title": "Términos de Uso - [business_name]",
+      "terms_meta_description": "Términos de servicio - derechos y obligaciones del usuario",
+      "home_seo_og_description": "Una barbería que busca establecer presencia en línea a través de una página de aterrizaje promocional. Sin detalles adicionales sobre la identidad única de la barbería, atmós",
+      "legal_accessibility_p_9": "[business_name] está comprometido a hacer nuestros servicios accesibles para todos los usuarios. Nos esforzamos por implementar \n            el Estándar Israelí (TI 5568) basado en las pautas WCAG 2.1 Nivel AA.",
+      "accessibility_page_title": "Declaración de Accesibilidad",
+      "legal_accessibility_h1_1": "Declaración de Accesibilidad",
+      "legal_accessibility_h2_2": "1. Política de Accesibilidad",
+      "legal_accessibility_h2_3": "2. Disposiciones de Accesibilidad en el Sitio",
+      "legal_accessibility_h2_4": "3. Tecnologías Asistivas Compatibles",
+      "legal_accessibility_h2_5": "4. Pruebas de Accesibilidad",
+      "legal_accessibility_h2_6": "5. Mejoras Continuas",
+      "legal_accessibility_h2_7": "6. Contacto y Comentarios",
+      "legal_accessibility_h3_8": "Cumplimiento WCAG 2.1",
+      "legal_accessibility_p_10": "Creemos en la igualdad de derechos y el derecho de cada persona a recibir información y servicios \n            de forma independiente e igualitaria. Este sitio web fue diseñado y construido con especial énfasis en \n            la accesibilidad para personas con discapacidades.",
+      "legal_accessibility_p_11": "El sitio web cumple con WCAG 2.1 Nivel AA, que incluye:",
+      "legal_accessibility_p_12": "El sitio web ha sido probado utilizando:",
+      "legal_accessibility_p_13": "Trabajamos continuamente para mejorar la accesibilidad de nuestro sitio web y actualizarlo según \n            los desarrollos tecnológicos y los comentarios de los usuarios.",
+      "legal_accessibility_p_14": "Si encuentra un problema de accesibilidad en el sitio o necesita asistencia, por favor contáctenos:",
+      "legal_accessibility_p_15": "Tiempo de respuesta: Respondemos a consultas de accesibilidad dentro de 3 días hábiles y trabajamos para resolver problemas dentro de 10 días hábiles.",
+      "legal_privacy_page_title": "Política de Privacidad - [business_name]",
+      "privacy_meta_description": "Nuestra política de privacidad - cómo recopilamos, usamos y protegemos su información",
+      "legal_accessibility_li_19": "Soporte de navegación por teclado",
+      "legal_accessibility_li_20": "Compatibilidad con lectores de pantalla",
+      "legal_accessibility_li_21": "Contraste de color apropiado",
+      "legal_accessibility_li_22": "Tamaños de fuente flexibles y escalables",
+      "legal_accessibility_li_23": "Texto alternativo descriptivo para imágenes",
+      "legal_accessibility_li_24": "Estructura jerárquica de encabezados",
+      "legal_accessibility_li_25": "Enlaces claros y descriptivos",
+      "legal_accessibility_li_26": "Soporte para zoom del 200% sin pérdida de contenido",
+      "legal_accessibility_li_27": "Perceptible: La información se presenta de manera que los usuarios puedan percibirla",
+      "legal_accessibility_li_28": "Operable: Los componentes de la interfaz son operables",
+      "legal_accessibility_li_29": "Comprensible: La información y la interfaz de usuario son comprensibles",
+      "legal_accessibility_li_30": "Robusto: El contenido puede ser interpretado por una variedad de tecnologías",
+      "legal_accessibility_li_31": "NVDA (Windows)",
+      "legal_accessibility_li_32": "JAWS (Windows)",
+      "legal_accessibility_li_33": "VoiceOver (Mac/iOS)",
+      "legal_accessibility_li_34": "TalkBack (Android)",
+      "legal_accessibility_li_35": "Dragon NaturallySpeaking",
+      "legal_accessibility_li_36": "Navegación por interruptor",
+      "legal_accessibility_li_37": "Herramientas automatizadas de pruebas de accesibilidad",
+      "legal_accessibility_li_38": "Pruebas manuales con lectores de pantalla",
+      "legal_accessibility_li_39": "Navegación solo con teclado",
+      "legal_accessibility_li_40": "Verificación de contraste de color",
+      "legal_accessibility_li_41": "Pruebas con usuarios con discapacidades",
+      "legal_accessibility_li_42": "Empresa: [business_name]",
+      "legal_accessibility_div_43": "Última actualización: 11 de mayo de 2026",
+      "legal_accessibility_div_44": "Nivel de Accesibilidad: AA (Estándar Israelí TI 5568)",
+      "accessibility_aria_label_75": "Menú",
+      "accessibility_aria_label_76": "Llamar",
+      "legal_accessibility_link_16": "[business_email]",
+      "legal_accessibility_link_17": "[business_phone]",
+      "legal_accessibility_link_18": "← Volver al sitio",
+      "home_seo_twitter_description": "Una barbería que busca establecer presencia en línea a través de una página de aterrizaje promocional. Sin detalles adicionales sobre la identidad única de la barbería, atmós",
+      "accessibility_meta_description": "Nuestra declaración de accesibilidad - nuestro compromiso con la accesibilidad digital",
+      "legal_accessibility_page_title": "Declaración de Accesibilidad - [business_name]"
+    }
+  }
+};
+  
+  // RTL languages
+  const rtlLanguages = [];
+  
+  // Available languages
+  const availableLanguages = ["en","es"];
+  
+  // Language display info with SVG flag images for cross-platform compatibility
+  const languageInfo = {"en":{"name":"English","nativeName":"English","flag":"🇺🇸","flagIcon":"circle-flags:us","dir":"ltr","flagImg":"<img src=\"https://api.iconify.design/circle-flags/us.svg\" width=\"20\" height=\"20\" alt=\"\" style=\"display:inline-block;vertical-align:middle;border-radius:50%;\" />"},"es":{"name":"Spanish","nativeName":"Español","flag":"🇪🇸","flagIcon":"circle-flags:es","dir":"ltr","flagImg":"<img src=\"https://api.iconify.design/circle-flags/es.svg\" width=\"20\" height=\"20\" alt=\"\" style=\"display:inline-block;vertical-align:middle;border-radius:50%;\" />"}};
+  
+  // Detect the active language. URL is the source of truth: a /<lang>/... path
+  // or ?lang=<x> query unambiguously says which language the user is viewing,
+  // and stored preference must NOT win over it (or visiting /en/... while
+  // localStorage holds 'he' from a previous Hebrew session keeps the cart
+  // drawer / product detail / checkout strings rendering in Hebrew).
+  // Stored preference is only consulted when no URL signal exists, falling
+  // back to the site default last.
+  function detectLanguage() {
+    try {
+      var pathLang = (window.location.pathname.match(/^\/([a-z]{2})(?:\/|$)/i) || [])[1];
+      if (pathLang && availableLanguages.includes(pathLang.toLowerCase())) {
+        var resolvedPathLang = pathLang.toLowerCase();
+        try { localStorage.setItem('zappy_lang', resolvedPathLang); } catch (e) {}
+        return resolvedPathLang;
+      }
+      var queryLang = new URLSearchParams(window.location.search).get('lang');
+      if (queryLang && availableLanguages.includes(queryLang.toLowerCase())) {
+        var resolvedQueryLang = queryLang.toLowerCase();
+        try { localStorage.setItem('zappy_lang', resolvedQueryLang); } catch (e) {}
+        return resolvedQueryLang;
+      }
+    } catch (e) {}
+    var stored = localStorage.getItem('zappy_lang');
+    if (stored && availableLanguages.includes(stored)) return stored;
+    return 'en';
+  }
+
+  // Build the URL for a target language and navigate. The URL pattern mirrors
+  // exactly what generateUrlBasedLanguageSwitcher writes into <a href> values:
+  //   default lang  → no prefix       (e.g. /products/foo)
+  //   non-default   → /<lang>/...      (e.g. /en/products/foo)
+  // We strip whatever language prefix is currently in the URL before applying
+  // the new one so transitions like /he/x → /en/x and /en/x → / both work.
+  // Navigating (instead of an in-page changeLanguage swap) is critical because
+  // server-rendered chrome (navbar links, announcement bar, footer, hero copy,
+  // etc.) is baked per-language at publish time and has no [data-i18n] hooks
+  // to update at runtime; only a real navigation surfaces the right version.
+  // It also makes refresh idempotent — the URL is the source of truth, so the
+  // page reloads in the same language the user just picked.
+  function navigateToLanguage(targetLang) {
+    if (!targetLang || !availableLanguages.includes(targetLang)) return;
+    if (targetLang === zappyI18n.language) return;
+    try { localStorage.setItem('zappy_lang', targetLang); } catch (e) {}
+
+    var path = window.location.pathname || '/';
+
+    // PREVIEW MODE: when the page is loaded inside the dashboard preview
+    // iframe the pathname is the API route itself
+    // (/api/website/preview/:id or /api/website/preview-fullscreen/:id) and
+    // the in-site path lives in ?page=. Prepending /<lang>/ to that pathname
+    // would produce /en/api/website/preview-fullscreen/... — a 404 with no
+    // matching Express route. Instead we keep the iframe URL and toggle only
+    // the ?lang= query param. The preview-fullscreen route already treats
+    // ?lang= as the highest-priority language source (overrides path/locale
+    // detection) and re-renders the page with the correct chrome on reload,
+    // which is exactly what the published /<lang>/ navigation would have
+    // delivered on a real domain.
+    if (path.indexOf('/api/website/preview') === 0) {
+      var previewUrl = new URL(window.location.href);
+      if (targetLang === 'en') {
+        previewUrl.searchParams.delete('lang');
+      } else {
+        previewUrl.searchParams.set('lang', targetLang);
+      }
+      window.location.assign(previewUrl.pathname + previewUrl.search + previewUrl.hash);
+      return;
+    }
+
+    var prefixMatch = path.match(/^\/([a-z]{2})(?=\/|$)/i);
+    if (prefixMatch && availableLanguages.includes(prefixMatch[1].toLowerCase())) {
+      path = path.slice(prefixMatch[0].length) || '/';
+    }
+
+    var newPath = (targetLang === 'en')
+      ? path
+      : ('/' + targetLang + (path === '/' ? '' : path));
+
+    window.location.assign(newPath + (window.location.search || '') + (window.location.hash || ''));
+  }
+
+  // Callbacks for language change events (e.g., e-commerce content refresh)
+  const languageChangeCallbacks = [];
+  
+  // Simple i18n implementation (no external dependency)
+  const zappyI18n = {
+    language: detectLanguage(),
+    resources: resources,
+    t: function(key) {
+      const langResources = this.resources[this.language];
+      if (langResources && langResources.translation && langResources.translation[key]) {
+        return langResources.translation[key];
+      }
+      // Fallback to default language
+      const fallbackResources = this.resources['en'];
+      if (fallbackResources && fallbackResources.translation && fallbackResources.translation[key]) {
+        return fallbackResources.translation[key];
+      }
+      return key;
+    },
+    changeLanguage: function(lang) {
+      if (!availableLanguages.includes(lang)) return Promise.resolve();
+      var oldLang = this.language;
+      this.language = lang;
+      localStorage.setItem('zappy_lang', lang);
+      updateContent();
+      updateDirection();
+      // Re-detect icon color after direction change (background may differ)
+      fixLanguageSwitcherColor();
+      // Also re-check after a short delay to ensure styles are applied
+      setTimeout(fixLanguageSwitcherColor, 100);
+      
+      // Call all registered language change callbacks (e.g., e-commerce content refresh)
+      languageChangeCallbacks.forEach(function(callback) {
+        try {
+          callback(lang, oldLang);
+        } catch (e) {
+          console.error('[i18n] Language change callback error:', e);
+        }
+      });
+      
+      return Promise.resolve();
+    },
+    getCurrentLanguage: function() { return this.language; },
+    getAvailableLanguages: function() { return availableLanguages; },
+    // Register a callback to be called when language changes
+    onLanguageChange: function(callback) {
+      if (typeof callback === 'function') {
+        languageChangeCallbacks.push(callback);
+      }
+    }
+  };
+  
+  // Update all translatable content
+  function updateContent() {
+    // Newline character for detection
+    var newlineChar = String.fromCharCode(10);
+    // Structural tags we NEVER want pasted from a translation value. These are
+    // almost always decorative markup (chevron icons, accent bars) that the
+    // editor accidentally captured when saving inline edits; rendering them
+    // from the translation causes duplicated icons/pipes in the DOM.
+    var structuralTagPattern = /<(i|span|div|svg|img|picture|video|iframe|button|figure|section|article|aside|header|footer|nav|main|ul|ol|li|table|tr|td|th|h[1-6]|p)\b[^>]*>/i;
+    // Inline formatting we DO want to preserve when the user intentionally
+    // styled a phrase (bold, emphasis, line breaks, etc.).
+    var inlineFormatPattern = /<(font|b|u|strong|em|br|sub|sup|mark|del|ins|s|small|big|a)\b[^>]*>/i;
+
+    function stripMarkup(value) {
+      if (typeof value !== 'string') return value;
+      var temp = document.createElement('div');
+      temp.innerHTML = value;
+      return temp.textContent || temp.innerText || '';
+    }
+
+    document.querySelectorAll('[data-i18n]').forEach(function(el) {
+      var key = el.getAttribute('data-i18n');
+      var translation = zappyI18n.t(key);
+      if (!translation || translation === key) return;
+
+      // Skip parent elements whose children have their own data-i18n keys
+      // (e.g., <li data-i18n="key1"><a data-i18n="key2">text</a></li>)
+      // Setting textContent/innerHTML on the parent would destroy child elements.
+      if (el.querySelector('[data-i18n]')) return;
+
+      // Defensive sanitization: if the translation value contains structural
+      // markup (icons, accent spans, wrappers), strip it down to plain text.
+      // The decorative markup belongs in the HTML template, not in translation
+      // values — allowing it through causes accumulation bugs.
+      if (structuralTagPattern.test(translation)) {
+        translation = stripMarkup(translation);
+        if (!translation) return;
+      }
+
+      // If every child element is purely decorative (icons, SVGs, empty
+      // accent spans, <br>, media), replace only the direct text nodes and
+      // leave the decorative children in place. This keeps the update
+      // idempotent across repeated language switches.
+      //
+      // If ANY child element carries its own text (e.g. <strong>Company</strong>,
+      // <em>word</em>, <a>link</a>), we must NOT take that path — replacing
+      // only the direct text node would leave the child's stale text behind
+      // and produce mixed/duplicate content like
+      //   "Nombre de la Empresa 2024 Company".
+      // In that case we fall through to the innerHTML/textContent replacement
+      // below, which fully swaps the element's contents with the translation.
+      var hasChildElements = el.children.length > 0;
+      if (hasChildElements) {
+        var allDecorative = true;
+        for (var ci = 0; ci < el.children.length; ci++) {
+          var kid = el.children[ci];
+          // Inline SVG elements live in the SVG namespace, so their
+          // tagName is lowercase 'svg' in the browser DOM (unlike HTML
+          // elements which are uppercase). Accept both to stay defensive.
+          var kidTag = kid.tagName;
+          var isMediaOrBr = kidTag === 'SVG' || kidTag === 'svg' ||
+                            kidTag === 'IMG' || kidTag === 'PICTURE' ||
+                            kidTag === 'VIDEO' || kidTag === 'IFRAME' ||
+                            kidTag === 'BR';
+          if (!isMediaOrBr && kid.textContent.trim() !== '') {
+            allDecorative = false;
+            break;
+          }
+        }
+
+        if (allDecorative) {
+          var nodes = el.childNodes;
+          var textUpdated = false;
+          for (var ni = 0; ni < nodes.length; ni++) {
+            var node = nodes[ni];
+            if (node.nodeType === 3 && node.textContent.trim()) {
+              if (!textUpdated) {
+                node.textContent = translation;
+                textUpdated = true;
+              } else {
+                node.textContent = '';
+              }
+            }
+          }
+          if (textUpdated) return;
+
+          // No direct text node — insert one after the leading decoration.
+          var firstEl = el.firstElementChild;
+          var textNode = document.createTextNode(translation);
+          if (firstEl && firstEl.nextSibling) {
+            el.insertBefore(textNode, firstEl.nextSibling);
+          } else if (firstEl) {
+            el.appendChild(textNode);
+          } else {
+            el.insertBefore(textNode, el.firstChild);
+          }
+          return;
+        }
+      }
+
+      // Carry over inline formatting from the source element when the translation
+      // is plain text. E.g., source: <font color="#fff">Hebrew</font>,
+      // translation: "English" → wrap as <font color="#fff">English</font>.
+      var fontChild = el.querySelector('font[color], font[face], font[size]');
+      if (fontChild && !inlineFormatPattern.test(translation)) {
+        var fontTag = '<font';
+        for (var ai = 0; ai < fontChild.attributes.length; ai++) {
+          fontTag += ' ' + fontChild.attributes[ai].name + '="' + fontChild.attributes[ai].value.replace(/"/g, '&quot;') + '"';
+        }
+        translation = fontTag + '>' + translation + '</font>';
+      }
+
+      var hasNewlines = translation.indexOf(newlineChar) !== -1;
+      var hasInlineFormat = inlineFormatPattern.test(translation);
+      var hasEntities = /&[a-zA-Z]+;|&#\d+;|&#x[0-9a-fA-F]+;/.test(translation);
+      var elementHasBr = /<br\s*\/?>/i.test(el.innerHTML);
+
+      if (hasNewlines || hasInlineFormat || hasEntities || elementHasBr) {
+        el.innerHTML = translation.split(newlineChar).join('<br>');
+      } else {
+        el.textContent = translation;
+      }
+    });
+
+    // Update placeholders
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(function(el) {
+      const key = el.getAttribute('data-i18n-placeholder');
+      const translation = zappyI18n.t(key);
+      if (translation && translation !== key) {
+        el.setAttribute('placeholder', translation);
+      }
+    });
+
+    // Update alt attributes
+    document.querySelectorAll('[data-i18n-alt]').forEach(function(el) {
+      const key = el.getAttribute('data-i18n-alt');
+      const translation = zappyI18n.t(key);
+      if (translation && translation !== key) {
+        el.setAttribute('alt', translation);
+      }
+    });
+
+    // Update title attributes
+    document.querySelectorAll('[data-i18n-title]').forEach(function(el) {
+      const key = el.getAttribute('data-i18n-title');
+      const translation = zappyI18n.t(key);
+      if (translation && translation !== key) {
+        el.setAttribute('title', translation);
+      }
+    });
+
+    // Update meta description / og:* / twitter:* / keywords / author
+    document.querySelectorAll('[data-i18n-content]').forEach(function(el) {
+      const key = el.getAttribute('data-i18n-content');
+      const translation = zappyI18n.t(key);
+      if (translation && translation !== key) {
+        el.setAttribute('content', translation);
+      }
+    });
+
+    // Update aria-label / aria-description for accessibility
+    document.querySelectorAll('[data-i18n-aria-label]').forEach(function(el) {
+      const key = el.getAttribute('data-i18n-aria-label');
+      const translation = zappyI18n.t(key);
+      if (translation && translation !== key) el.setAttribute('aria-label', translation);
+    });
+    document.querySelectorAll('[data-i18n-aria-description]').forEach(function(el) {
+      const key = el.getAttribute('data-i18n-aria-description');
+      const translation = zappyI18n.t(key);
+      if (translation && translation !== key) el.setAttribute('aria-description', translation);
+    });
+
+    // Update <optgroup label="...">
+    document.querySelectorAll('[data-i18n-label]').forEach(function(el) {
+      const key = el.getAttribute('data-i18n-label');
+      const translation = zappyI18n.t(key);
+      if (translation && translation !== key) el.setAttribute('label', translation);
+    });
+
+    // Update JSON-LD: swap out __I18N__<key>__<source> tokens
+    document.querySelectorAll('script[type="application/ld+json"]').forEach(function(scriptEl) {
+      try {
+        var raw = scriptEl.textContent;
+        if (!raw || raw.indexOf('__I18N__') === -1) return;
+        var data = JSON.parse(raw);
+        var swapped = false;
+        function walk(node) {
+          if (Array.isArray(node)) { node.forEach(walk); return; }
+          if (!node || typeof node !== 'object') return;
+          for (var k in node) {
+            if (typeof node[k] === 'string' && node[k].indexOf('__I18N__') === 0) {
+              var m = node[k].match(/^__I18N__([^_]+(?:_[^_]+)*?)__([sS]*)$/);
+              if (m) {
+                var key = m[1];
+                var fallback = m[2];
+                var t = zappyI18n.t(key);
+                node[k] = (t && t !== key) ? t : fallback;
+                swapped = true;
+              }
+            } else if (typeof node[k] === 'object' && node[k] !== null) {
+              walk(node[k]);
+            }
+          }
+        }
+        walk(data);
+        if (swapped) scriptEl.textContent = JSON.stringify(data);
+      } catch (_e) { /* leave untouched */ }
+    });
+
+    // Update page title
+    const titleEl = document.querySelector('title[data-i18n]');
+    if (titleEl) {
+      const key = titleEl.getAttribute('data-i18n');
+      const translation = zappyI18n.t(key);
+      if (translation && translation !== key) {
+        document.title = translation;
+      }
+    }
+  }
+  
+  // Update document direction based on language
+  function updateDirection() {
+    const currentLang = zappyI18n.language;
+    const isRTL = rtlLanguages.includes(currentLang);
+    const html = document.documentElement;
+    const body = document.body;
+    const newDir = isRTL ? 'rtl' : 'ltr';
+    
+    // Update html element - only direction, NOT text-align (preserve centered elements)
+    html.setAttribute('lang', currentLang);
+    html.setAttribute('dir', newDir);
+    html.style.direction = newDir;
+    
+    // Update body element - only direction
+    if (body) {
+      body.setAttribute('dir', newDir);
+      body.style.direction = newDir;
+    }
+    
+    // Update major content containers - only direction, NOT text-align
+    // This preserves centered hero sections, titles, etc.
+    document.querySelectorAll('main, article, section, footer, aside, .content, .container, .wrapper').forEach(function(el) {
+      el.style.direction = newDir;
+      if (el.hasAttribute('dir')) el.setAttribute('dir', newDir);
+      // Do NOT set text-align - preserve original alignment (center, left, right)
+    });
+    
+    // ONLY apply text-align to legal page content
+    document.querySelectorAll('.legal-content, .terms-content, .privacy-content').forEach(function(el) {
+      el.style.direction = newDir;
+      el.style.textAlign = isRTL ? 'right' : 'left';
+    });
+    
+    // Swap inline text-align on content elements when direction changes.
+    // The HTML was generated with a specific direction (captured as
+    // __generatedDir at script start, before any runtime changes).
+    // When the active language's direction differs from the generation
+    // direction, inline text-align values must be mirrored.
+    var generatedIsRTL = __generatedDir === 'rtl';
+    var needsSwap = isRTL !== generatedIsRTL;
+    document.querySelectorAll('[style]').forEach(function(el) {
+      if (el.closest('header') || el.closest('nav') || el.closest('.navbar') || el.closest('.lang-switcher')) return;
+      if (el.closest('.legal-content') || el.closest('.terms-content') || el.closest('.privacy-content')) return;
+      var ta = el.style.textAlign;
+      if (!ta || ta === 'center' || ta === 'justify' || ta === 'start' || ta === 'end') return;
+      if (!el.hasAttribute('data-ta-orig')) {
+        el.setAttribute('data-ta-orig', ta);
+      }
+      var origTA = el.getAttribute('data-ta-orig');
+      if (needsSwap) {
+        el.style.textAlign = origTA === 'right' ? 'left' : 'right';
+      } else {
+        el.style.textAlign = origTA;
+      }
+    });
+
+    // Swap directional CSS properties in stylesheet rules when direction changes.
+    // Handles text-align (right↔left) and — for flex-direction:column rules only
+    // — align-items (flex-end↔flex-start).  Recurses into @media/@supports so
+    // responsive rules are also mirrored.  Uses setProperty() to preserve the
+    // original !important priority.
+    if (!window.__zappyOrigCSS) window.__zappyOrigCSS = new WeakMap();
+    var origCSSMap = window.__zappyOrigCSS;
+    function swapCSSRule(cssRule) {
+      if (cssRule.cssRules && cssRule.cssRules.length) {
+        for (var ci = 0; ci < cssRule.cssRules.length; ci++) swapCSSRule(cssRule.cssRules[ci]);
+        return;
+      }
+      if (!cssRule.style || !cssRule.selectorText) return;
+      if (cssRule.selectorText.indexOf('[dir=') !== -1) return;
+      if (cssRule.style.direction) return;
+      if (/^(html|body)\s*,?\s*(html|body)?\s*$/.test(cssRule.selectorText.trim())) return;
+      if (/\.(lang-option|lang-switcher|mobile-lang)/.test(cssRule.selectorText)) return;
+      if (!origCSSMap.has(cssRule)) {
+        origCSSMap.set(cssRule, {
+          ta: cssRule.style.textAlign || '',
+          taPri: cssRule.style.getPropertyPriority('text-align'),
+          ai: cssRule.style.alignItems || '',
+          aiPri: cssRule.style.getPropertyPriority('align-items'),
+          fd: cssRule.style.flexDirection || ''
+        });
+      }
+      var orig = origCSSMap.get(cssRule);
+      var rta = orig.ta;
+      if (rta && rta !== 'center' && rta !== 'justify' && rta !== 'start' && rta !== 'end') {
+        var newTA = needsSwap ? (rta === 'right' ? 'left' : 'right') : rta;
+        cssRule.style.setProperty('text-align', newTA, orig.taPri);
+      }
+      var rai = orig.ai;
+      if ((rai === 'flex-end' || rai === 'flex-start') && orig.fd === 'column') {
+        var newAI = needsSwap ? (rai === 'flex-end' ? 'flex-start' : 'flex-end') : rai;
+        cssRule.style.setProperty('align-items', newAI, orig.aiPri);
+      }
+    }
+    for (var si = 0; si < document.styleSheets.length; si++) {
+      try {
+        var sheetRules = document.styleSheets[si].cssRules;
+        for (var ri = 0; ri < sheetRules.length; ri++) swapCSSRule(sheetRules[ri]);
+      } catch(e) {}
+    }
+
+    // Swap align-items on inline-styled flex-direction:column containers
+    document.querySelectorAll('[style]').forEach(function(el) {
+      if (el.closest('header') || el.closest('nav') || el.closest('.navbar') || el.closest('.lang-switcher')) return;
+      if (el.closest('.legal-content') || el.closest('.terms-content') || el.closest('.privacy-content')) return;
+      var ai = el.style.alignItems;
+      if (ai !== 'flex-end' && ai !== 'flex-start') return;
+      if (el.style.flexDirection !== 'column') return;
+      if (!el.hasAttribute('data-ai-orig')) {
+        el.setAttribute('data-ai-orig', ai);
+      }
+      var origAI = el.getAttribute('data-ai-orig');
+      if (needsSwap) {
+        el.style.alignItems = origAI === 'flex-end' ? 'flex-start' : 'flex-end';
+      } else {
+        el.style.alignItems = origAI;
+      }
+    });
+
+    // Update catalog menu RTL class to match current direction
+    document.querySelectorAll('.zappy-catalog-menu').forEach(function(el) {
+      if (isRTL) {
+        el.classList.add('rtl');
+        el.setAttribute('dir', 'rtl');
+      } else {
+        el.classList.remove('rtl');
+        el.removeAttribute('dir');
+      }
+    });
+    
+    // IMPORTANT: Do NOT set direction on navigation flex containers!
+    // V2 sites have layouts designed for a specific direction.
+    // Changing inline direction on flex containers reverses the item order, breaking layouts.
+    // Instead, we rely on the dir attribute on <html> for text direction,
+    // and let the original CSS handle navigation layout.
+    
+    // Remove dir ATTRIBUTE from nav elements - they should inherit from <html>
+    // V2 sites may have hardcoded dir="rtl" on nav elements which needs to be removed
+    document.querySelectorAll('header, nav, .navbar, .nav-container, .header-container, .nav-links, .menu, nav ul, header ul, #navMenu').forEach(function(el) {
+      // Remove dir attribute so element inherits from <html>
+      el.removeAttribute('dir');
+      // Remove all layout-affecting inline styles - let original CSS take over
+      el.style.removeProperty('direction');
+      el.style.removeProperty('flex-direction');
+      el.style.removeProperty('justify-content');
+      el.style.removeProperty('margin-left');
+      el.style.removeProperty('margin-right');
+    });
+    
+    // SPECIAL HANDLING for nav elements
+    document.querySelectorAll('.nav-menu, #navMenu, .nav-right-group').forEach(function(el) {
+      el.removeAttribute('dir');
+      el.style.removeProperty('direction');
+      el.style.removeProperty('flex-direction');
+      el.style.removeProperty('justify-content');
+      if (isRTL) {
+        el.style.removeProperty('margin-left');
+        el.style.removeProperty('margin-right');
+      } else {
+        // In LTR: override CSS margin-left:auto with 0 for nav-menu elements
+        el.style.setProperty('margin-left', '0', 'important');
+        el.style.removeProperty('margin-right');
+      }
+    });
+    
+    // CRITICAL FIX FOR V2 SITES: Move lang-switcher INSIDE nav-cta-container
+    // V2 sites use margin-left:auto on nav-cta-container to push it right.
+    // If lang-switcher is a sibling, it gets left behind. Moving it inside keeps them grouped.
+    document.querySelectorAll('.lang-switcher').forEach(function(el) {
+      var ctaContainer = el.parentElement ? el.parentElement.querySelector('.nav-cta-container') : null;
+      if (ctaContainer && el.parentElement === ctaContainer.parentElement) {
+        // Move lang-switcher as first child of CTA container
+        ctaContainer.insertBefore(el, ctaContainer.firstChild);
+        // Ensure vertical alignment when lang-switcher and CTA button are siblings
+        ctaContainer.style.setProperty('align-items', 'center', 'important');
+      }
+      // Clear any margin overrides
+      el.style.removeProperty('margin-left');
+      el.style.removeProperty('margin-right');
+    });
+    
+    // CRITICAL FIX FOR E-COMMERCE SITES: Move lang-switcher inside nav-icons-left
+    // E-commerce sites have a nav-icons-left container with search box.
+    // For RTL: lang-switcher should appear to the RIGHT of search box
+    // For LTR: lang-switcher should appear to the LEFT of search box
+    document.querySelectorAll('.lang-switcher').forEach(function(el) {
+      var navIconsLeft = document.querySelector('.nav-icons-left');
+      var searchBox = document.querySelector('.nav-search-box');
+      
+      // Only move if not already inside nav-icons-left and the elements exist
+      if (navIconsLeft && searchBox && !el.closest('.nav-icons-left')) {
+        // Insert before search box - in RTL this visually appears to the RIGHT
+        navIconsLeft.insertBefore(el, searchBox);
+      }
+    });
+    
+    // Remove any previously set margins on nav links and logo
+    document.querySelectorAll('header > a, nav > a, .nav-menu > a, .nav-links > a, nav ul li, header ul li, .logo, .site-logo, .brand, .navbar-brand, .nav-brand').forEach(function(el) {
+      el.style.removeProperty('margin-left');
+      el.style.removeProperty('margin-right');
+    });
+    
+    // NOTE: Removed old code that set margin-left:auto on .lang-switcher
+    // This conflicted with V2 layouts. The margin handling is now done in the 
+    // special handling section above that sets margin-left:0 in LTR mode.
+    
+    // CTA buttons - remove any inline margin styles to let CSS handle positioning
+    document.querySelectorAll('header .btn, header .button, header .cta, nav .btn, nav .button, .navbar .btn, .nav-cta-container, .cta-container, .header-cta, .nav-cta').forEach(function(el) {
+      el.style.removeProperty('margin-left');
+      el.style.removeProperty('margin-right');
+    });
+    
+    // Globe icon SVG - uses currentColor so it adopts whatever color is set on the button
+    var globeIconSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M12.039,.002s0,0,0,0c-.013,0-.026-.002-.039-.002-.005,0-.009,0-.014,0-.002,0-.003,0-.005,0C5.373,.011,0,5.39,0,12s5.383,12,12,12,12-5.383,12-12S18.638,.023,12.039,.002Zm9.747,6.998h-4.814c-1.067-2.669-2.712-4.781-3.731-5.925,3.734,.421,6.901,2.719,8.546,5.925Zm-4.786,5c0,1.407-.292,2.753-.731,4H7.731c-.439-1.247-.731-2.593-.731-4s.292-2.754,.73-4h8.539c.439,1.247,.731,2.593,.731,4Zm-1.122,5c-1.229,2.838-3.116,4.99-3.878,5.788-.762-.798-2.649-2.95-3.878-5.788h7.755ZM8.121,7c1.229-2.841,3.117-4.992,3.879-5.789,.762,.798,2.649,2.95,3.878,5.789h-7.757ZM10.757,1.075c-1.025,1.15-2.668,3.264-3.73,5.925H2.214C3.859,3.795,7.024,1.498,10.757,1.075ZM1.764,8H6.668c-.403,1.247-.668,2.589-.668,4s.265,2.752,.669,4H1.764c-.487-1.242-.764-2.588-.764-4s.277-2.758,.764-4Zm.45,9H7.029c1.067,2.669,2.712,4.781,3.731,5.925-3.734-.421-6.901-2.719-8.546-5.925Zm11.026,5.925c1.019-1.144,2.664-3.257,3.731-5.925h4.814c-1.645,3.206-4.812,5.504-8.546,5.925Zm8.996-6.925h-4.905c.404-1.248,.669-2.589,.669-4s-.265-2.752-.669-4h4.905c.487,1.242,.764,2.588,.764,4s-.277,2.758-.764,4Z"/></svg>';
+    
+    // Match the button color to a sibling nav link so the globe contrasts with the nav bg
+    var currentLangEl = document.querySelector('.lang-switcher-current');
+    if (currentLangEl) {
+      var navContainer = currentLangEl.closest('nav') || currentLangEl.closest('header') || currentLangEl.closest('.navbar');
+      if (navContainer) {
+        var navLink = navContainer.querySelector('.nav-menu a, .nav-links a');
+        if (!navLink) navLink = navContainer.querySelector('a:not(.lang-option):not(.lang-switcher-current):not([class*="logo"])');
+        if (navLink) {
+          var linkColor = getComputedStyle(navLink).color;
+          if (linkColor && linkColor !== 'rgb(0, 0, 0)' && linkColor !== 'rgba(0, 0, 0, 0)') {
+            currentLangEl.style.color = linkColor;
+          }
+        }
+      }
+      currentLangEl.innerHTML = globeIconSvg;
+    }
+    
+    // Update dropdown options (show all except current)
+    document.querySelectorAll('.lang-switcher-dropdown').forEach(function(dropdown) {
+      dropdown.innerHTML = availableLanguages
+        .filter(function(lang) { return lang !== currentLang; })
+        .map(function(lang) {
+          const info = languageInfo[lang] || { flag: '🌐', flagImg: '🌐', nativeName: lang };
+          // Use flagImg (SVG) for cross-platform compatibility, fallback to emoji flag
+          return '<button class="lang-option" data-lang="' + lang + '" style="display:flex;align-items:center;gap:8px;width:100%;padding:10px 14px;background:none;border:none;text-align:left;cursor:pointer;font-size:14px;color:#333;">' + (info.flagImg || info.flag) + ' ' + info.nativeName + '</button>';
+        })
+        .join('');
+      
+      // Re-attach event listeners. Anchors with a real href (the URL-based
+      // switcher renders <a href="/en/...">) MUST navigate; preventDefault'ing
+      // them and calling changeLanguage(null) — which is what the previous
+      // implementation did, since lang-option anchors do not carry data-lang —
+      // silently swallowed the click and left the navbar / announcement bar /
+      // hero copy stuck in the previous language. Buttons with data-lang fall
+      // through to navigateToLanguage so the page reloads under the correct
+      // /<lang>/... URL and the next refresh stays on that language.
+      dropdown.querySelectorAll('.lang-option').forEach(function(option) {
+        option.addEventListener('click', function(e) {
+          var langAttr = this.getAttribute('data-lang');
+          var hrefAttr = this.getAttribute('href');
+          if (this.tagName === 'A' && hrefAttr && hrefAttr !== '#') {
+            e.stopPropagation();
+            try { if (langAttr) localStorage.setItem('zappy_lang', langAttr); } catch (_) {}
+            dropdown.style.opacity = '0';
+            dropdown.style.visibility = 'hidden';
+            dropdown.style.transform = 'translateY(-8px)';
+            return;
+          }
+          e.preventDefault();
+          e.stopPropagation();
+          if (langAttr) navigateToLanguage(langAttr);
+          dropdown.style.opacity = '0';
+          dropdown.style.visibility = 'hidden';
+          dropdown.style.transform = 'translateY(-8px)';
+        });
+      });
+    });
+    
+    // FIX: Update mobile button positions when language/direction changes
+    // CSS handles positioning based on html[dir] attribute.
+    // We just need to remove any inline left/right styles so CSS can take over.
+    if (window.innerWidth < 768) {
+      var mobileToggle = document.querySelector('.mobile-toggle');
+      var phoneBtn = document.querySelector('.phone-header-btn');
+      var navCtaContainer = document.querySelector('.nav-cta-container');
+      
+      // Remove inline left/right - CSS will position based on html[dir]
+      if (mobileToggle) {
+        mobileToggle.style.removeProperty('left');
+        mobileToggle.style.removeProperty('right');
+        console.log('[i18n] Cleared mobile toggle inline position - CSS will handle based on dir:', newDir);
+      }
+      
+      if (phoneBtn) {
+        phoneBtn.style.removeProperty('left');
+        phoneBtn.style.removeProperty('right');
+        console.log('[i18n] Cleared phone button inline position - CSS will handle based on dir:', newDir);
+      }
+      
+      if (navCtaContainer) {
+        navCtaContainer.style.removeProperty('left');
+        navCtaContainer.style.removeProperty('right');
+        console.log('[i18n] Cleared nav-cta-container inline position - CSS will handle based on dir:', newDir);
+      }
+    }
+    
+    // Update mobile language submenu in hamburger
+    updateMobileLangMenu();
+  }
+  
+  // Initialize language switcher dropdown
+  function initLanguageSwitcher() {
+    const switchers = document.querySelectorAll('.lang-switcher');
+    if (!switchers.length) return;
+    
+    switchers.forEach(function(switcher) {
+      const dropdown = switcher.querySelector('.lang-switcher-dropdown');
+      const current = switcher.querySelector('.lang-switcher-current');
+      
+      if (!current || !dropdown) return;
+      
+      // Ensure dropdown is hidden initially (inline style fallback)
+      dropdown.style.opacity = '0';
+      dropdown.style.visibility = 'hidden';
+      dropdown.style.transform = 'translateY(-8px)';
+      
+      // Toggle dropdown with inline styles
+      current.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        const isOpen = dropdown.style.opacity === '1';
+        if (isOpen) {
+          dropdown.style.opacity = '0';
+          dropdown.style.visibility = 'hidden';
+          dropdown.style.transform = 'translateY(-8px)';
+        } else {
+          dropdown.style.opacity = '1';
+          dropdown.style.visibility = 'visible';
+          dropdown.style.transform = 'translateY(0)';
+        }
+      });
+      
+      // Handle language selection. See the equivalent block in
+      // updateLanguageSwitcherOptions for why anchors must keep their default
+      // navigation and buttons must route through navigateToLanguage.
+      dropdown.querySelectorAll('.lang-option').forEach(function(option) {
+        option.addEventListener('click', function(e) {
+          var langAttr = this.getAttribute('data-lang');
+          var hrefAttr = this.getAttribute('href');
+          if (this.tagName === 'A' && hrefAttr && hrefAttr !== '#') {
+            e.stopPropagation();
+            try { if (langAttr) localStorage.setItem('zappy_lang', langAttr); } catch (_) {}
+            dropdown.style.opacity = '0';
+            dropdown.style.visibility = 'hidden';
+            dropdown.style.transform = 'translateY(-8px)';
+            return;
+          }
+          e.preventDefault();
+          e.stopPropagation();
+          if (langAttr) navigateToLanguage(langAttr);
+          dropdown.style.opacity = '0';
+          dropdown.style.visibility = 'hidden';
+          dropdown.style.transform = 'translateY(-8px)';
+        });
+      });
+    });
+    
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function() {
+      document.querySelectorAll('.lang-switcher-dropdown').forEach(function(dropdown) {
+        dropdown.style.opacity = '0';
+        dropdown.style.visibility = 'hidden';
+        dropdown.style.transform = 'translateY(-8px)';
+      });
+    });
+  }
+  
+  // ==============================================
+  // MOBILE LANGUAGE SUBMENU (inside hamburger menu)
+  // ==============================================
+  
+  // Create mobile language menu inside hamburger
+  function injectMobileLangCss() {
+    if (document.getElementById('mobile-lang-menu-css')) return;
+    var style = document.createElement('style');
+    style.id = 'mobile-lang-menu-css';
+    style.textContent = '@media (max-width: 768px) {' +
+      '.lang-switcher, .nav-cta-container .lang-switcher, .nav-container .lang-switcher,' +
+      '.navbar .lang-switcher, .navbar .nav-cta-container .lang-switcher,' +
+      '.nav-icons-left .lang-switcher, .nav-ecommerce-icons .lang-switcher { display: none !important; }' +
+      '.zappy-lang-switcher-container { display: none !important; }' +
+      '.mobile-lang-menu { list-style: none !important; width: 100%; border-top: 1px solid rgba(128,128,128,0.2); margin-top: 8px; padding-top: 8px; }' +
+      '.mobile-lang-toggle { display: flex; align-items: center; gap: 10px; width: 100%; padding: 12px 16px; background: none; border: none; cursor: pointer; color: inherit; font-size: 15px; font-family: inherit; }' +
+      '.mobile-lang-toggle span { flex: 1; }' +
+      'html[dir="rtl"] .mobile-lang-toggle span, html[lang="he"] .mobile-lang-toggle span, html[lang="ar"] .mobile-lang-toggle span { text-align: right; }' +
+      'html:not([dir="rtl"]) .mobile-lang-toggle span { text-align: left; }' +
+      '.mobile-lang-chevron { transition: transform 0.3s ease; flex-shrink: 0; }' +
+      '.mobile-lang-options { display: none; flex-direction: column; padding: 0 16px 8px 46px; }' +
+      'html[dir="rtl"] .mobile-lang-options, html[lang="he"] .mobile-lang-options, html[lang="ar"] .mobile-lang-options { padding: 0 46px 8px 16px; }' +
+      '.mobile-lang-options.open { display: flex; }' +
+      '.mobile-lang-option { display: flex; align-items: center; gap: 8px; padding: 10px 12px; background: none; border: none; cursor: pointer; color: inherit; font-size: 14px; font-family: inherit; border-radius: 6px; transition: background-color 0.2s; width: 100%; }' +
+      'html[dir="rtl"] .mobile-lang-option, html[lang="he"] .mobile-lang-option, html[lang="ar"] .mobile-lang-option { text-align: right; }' +
+      'html:not([dir="rtl"]) .mobile-lang-option { text-align: left; }' +
+      '.mobile-lang-option:hover { background: rgba(128,128,128,0.1); }' +
+      '.mobile-lang-option img { width: 20px; height: 20px; border-radius: 50%; display: inline-block; vertical-align: middle; }' +
+      '}';
+    document.head.appendChild(style);
+  }
+
+  function createMobileLangMenu() {
+    if (window.innerWidth > 768) return;
+    if (document.querySelector('.mobile-lang-menu')) return;
+    if (availableLanguages.length < 2) return;
+    
+    injectMobileLangCss();
+    
+    var navMenu = document.getElementById('navMenu') || document.querySelector('.nav-menu');
+    if (!navMenu) return;
+    
+    var currentLang = zappyI18n.language;
+    var currentInfo = languageInfo[currentLang] || { nativeName: currentLang, flagImg: '' };
+    
+    var optionsHtml = availableLanguages
+      .filter(function(lang) { return lang !== currentLang; })
+      .map(function(lang) {
+        var info = languageInfo[lang] || { nativeName: lang, flagImg: '' };
+        return '<button class="mobile-lang-option" data-lang="' + lang + '">' +
+          (info.flagImg || info.flag || '') + ' ' + info.nativeName + '</button>';
+      })
+      .join('');
+    
+    var li = document.createElement('li');
+    li.className = 'mobile-lang-menu';
+    li.innerHTML =
+      '<button class="mobile-lang-toggle" type="button">' +
+        '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M12.039,.002s0,0,0,0c-.013,0-.026-.002-.039-.002-.005,0-.009,0-.014,0-.002,0-.003,0-.005,0C5.373,.011,0,5.39,0,12s5.383,12,12,12,12-5.383,12-12S18.638,.023,12.039,.002Zm9.747,6.998h-4.814c-1.067-2.669-2.712-4.781-3.731-5.925,3.734,.421,6.901,2.719,8.546,5.925Zm-4.786,5c0,1.407-.292,2.753-.731,4H7.731c-.439-1.247-.731-2.593-.731-4s.292-2.754,.73-4h8.539c.439,1.247,.731,2.593,.731,4Zm-1.122,5c-1.229,2.838-3.116,4.99-3.878,5.788-.762-.798-2.649-2.95-3.878-5.788h7.755ZM8.121,7c1.229-2.841,3.117-4.992,3.879-5.789,.762,.798,2.649,2.95,3.878,5.789h-7.757ZM10.757,1.075c-1.025,1.15-2.668,3.264-3.73,5.925H2.214C3.859,3.795,7.024,1.498,10.757,1.075ZM1.764,8H6.668c-.403,1.247-.668,2.589-.668,4s.265,2.752,.669,4H1.764c-.487-1.242-.764-2.588-.764-4s.277-2.758,.764-4Zm.45,9H7.029c1.067,2.669,2.712,4.781,3.731,5.925-3.734-.421,6.901-2.719-8.546-5.925Zm11.026,5.925c1.019-1.144,2.664-3.257,3.731-5.925h4.814c-1.645,3.206-4.812,5.504-8.546,5.925Zm8.996-6.925h-4.905c.404-1.248,.669-2.589,.669-4s-.265-2.752-.669-4h4.905c.487,1.242,.764,2.588,.764,4s-.277,2.758-.764,4Z"/></svg>' +
+        '<span>' + currentInfo.nativeName + '</span>' +
+        '<svg class="mobile-lang-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 4 6 8 10 4"></polyline></svg>' +
+      '</button>' +
+      '<div class="mobile-lang-options">' + optionsHtml + '</div>';
+    
+    navMenu.appendChild(li);
+    
+    console.log('[i18n] Mobile language submenu created in hamburger menu');
+  }
+  
+  // Wire up mobile language submenu event handlers
+  function initMobileLangSwitcher() {
+    var toggle = document.querySelector('.mobile-lang-toggle');
+    var options = document.querySelector('.mobile-lang-options');
+    if (!toggle || !options) return;
+    
+    var newToggle = toggle.cloneNode(true);
+    toggle.parentNode.replaceChild(newToggle, toggle);
+    var optionsEl = newToggle.parentNode.querySelector('.mobile-lang-options');
+    
+    newToggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      var isOpen = optionsEl.classList.contains('open');
+      if (isOpen) {
+        optionsEl.classList.remove('open');
+        optionsEl.style.display = 'none';
+      } else {
+        optionsEl.classList.add('open');
+        optionsEl.style.display = 'flex';
+      }
+      var chevron = newToggle.querySelector('.mobile-lang-chevron');
+      if (chevron) chevron.style.transform = isOpen ? '' : 'rotate(180deg)';
+    });
+    
+    optionsEl.querySelectorAll('.mobile-lang-option').forEach(function(option) {
+      option.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        var lang = this.getAttribute('data-lang');
+        // Navigate to /<lang>/... so server-baked chrome (navbar, hero,
+        // announcement bar, footer) renders in the chosen language. An in-page
+        // changeLanguage swap would only refresh [data-i18n] elements and the
+        // user would still see the old navbar; refreshing would also revert
+        // because the URL still encoded the previous language.
+        if (lang) navigateToLanguage(lang);
+      });
+    });
+  }
+  
+  // Update mobile language menu after language change
+  function updateMobileLangMenu() {
+    var menuItem = document.querySelector('.mobile-lang-menu');
+    if (!menuItem) {
+      createMobileLangMenu();
+      initMobileLangSwitcher();
+      return;
+    }
+    
+    var currentLang = zappyI18n.language;
+    var currentInfo = languageInfo[currentLang] || { nativeName: currentLang };
+    
+    var toggleSpan = menuItem.querySelector('.mobile-lang-toggle span');
+    if (toggleSpan) toggleSpan.textContent = currentInfo.nativeName;
+    
+    var optionsContainer = menuItem.querySelector('.mobile-lang-options');
+    if (!optionsContainer) return;
+    
+    optionsContainer.innerHTML = availableLanguages
+      .filter(function(lang) { return lang !== currentLang; })
+      .map(function(lang) {
+        var info = languageInfo[lang] || { nativeName: lang, flagImg: '' };
+        return '<button class="mobile-lang-option" data-lang="' + lang + '">' +
+          (info.flagImg || info.flag || '') + ' ' + info.nativeName + '</button>';
+      })
+      .join('');
+    
+    optionsContainer.querySelectorAll('.mobile-lang-option').forEach(function(option) {
+      option.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        var lang = this.getAttribute('data-lang');
+        // See initMobileLangSwitcher above for the rationale: navigate so the
+        // server-rendered chrome ends up in the chosen language and refresh
+        // stays consistent.
+        if (lang) navigateToLanguage(lang);
+      });
+    });
+    
+    optionsContainer.classList.remove('open');
+    optionsContainer.style.display = 'none';
+  }
+  
+  // Fix mobile menu inline styles that may have been incorrectly persisted
+  // This is needed because inline styles override CSS media queries
+  function fixMobileMenuStyles() {
+    // Only run on mobile
+    if (window.innerWidth >= 768) return;
+    
+    // Remove inline flex-direction from nav menus so CSS can take over
+    document.querySelectorAll('.nav-menu, #navMenu, nav ul, header ul').forEach(function(el) {
+      if (el.style.flexDirection) {
+        el.style.removeProperty('flex-direction');
+      }
+    });
+  }
+  
+  // Fix mobile button positioning based on current page direction
+  // Clear any inline left/right styles so CSS can take over based on html[dir]
+  function fixMobileButtonPositioning() {
+    // Only run on mobile
+    if (window.innerWidth >= 768) return;
+    
+    var mobileToggle = document.querySelector('.mobile-toggle');
+    var phoneBtn = document.querySelector('.phone-header-btn');
+    var navCtaContainer = document.querySelector('.nav-cta-container');
+    
+    // Clear inline left/right - CSS will position based on html[dir]
+    if (mobileToggle) {
+      mobileToggle.style.removeProperty('left');
+      mobileToggle.style.removeProperty('right');
+    }
+    
+    if (phoneBtn) {
+      phoneBtn.style.removeProperty('left');
+      phoneBtn.style.removeProperty('right');
+    }
+    
+    if (navCtaContainer) {
+      navCtaContainer.style.removeProperty('left');
+      navCtaContainer.style.removeProperty('right');
+    }
+    
+    console.log('[i18n] Cleared inline button positions - CSS handles based on html[dir]:', document.documentElement.dir);
+  }
+  
+  // ============================================
+  // LANGUAGE SWITCHER ICON COLOR DETECTION
+  // Dynamically detect if navbar has light/dark background
+  // and set the globe icon color accordingly
+  // ============================================
+  function fixLanguageSwitcherColor() {
+    var switcher = document.querySelector('.lang-switcher-current');
+    var svg = switcher ? switcher.querySelector('svg') : null;
+    if (!switcher || !svg) return;
+    
+    // Find the navbar or header element
+    var navbar = document.querySelector('.navbar') || 
+                 document.querySelector('nav') || 
+                 document.querySelector('header');
+    if (!navbar) return;
+    
+    // Get the effective background color by walking up the DOM tree
+    function getEffectiveBackgroundColor(element) {
+      var el = element;
+      var maxDepth = 10; // Prevent infinite loops
+      
+      while (el && maxDepth > 0) {
+        var style = window.getComputedStyle(el);
+        var bg = style.backgroundColor;
+        
+        // Skip transparent backgrounds
+        if (bg && bg !== 'transparent' && bg !== 'rgba(0, 0, 0, 0)') {
+          return bg;
+        }
+        
+        // Check background-image for gradients
+        var bgImage = style.backgroundImage;
+        if (bgImage && bgImage !== 'none') {
+          // Extract first color from gradient
+          var gradientMatch = bgImage.match(/rgba?\([^)]+\)|#[a-fA-F0-9]{3,8}/);
+          if (gradientMatch) {
+            return gradientMatch[0];
+          }
+        }
+        
+        el = el.parentElement;
+        maxDepth--;
+      }
+      
+      // Default to white if no background found (assume light)
+      return 'rgb(255, 255, 255)';
+    }
+    
+    // Parse color string to RGB values
+    function parseColor(colorStr) {
+      if (!colorStr) return null;
+      
+      // Handle rgb/rgba
+      var rgbMatch = colorStr.match(/rgba?\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)/);
+      if (rgbMatch) {
+        return {
+          r: parseInt(rgbMatch[1], 10),
+          g: parseInt(rgbMatch[2], 10),
+          b: parseInt(rgbMatch[3], 10)
+        };
+      }
+      
+      // Handle hex
+      var hexMatch = colorStr.match(/#([a-fA-F0-9]{2})([a-fA-F0-9]{2})([a-fA-F0-9]{2})/);
+      if (hexMatch) {
+        return {
+          r: parseInt(hexMatch[1], 16),
+          g: parseInt(hexMatch[2], 16),
+          b: parseInt(hexMatch[3], 16)
+        };
+      }
+      
+      // Handle 3-digit hex
+      var hex3Match = colorStr.match(/#([a-fA-F0-9])([a-fA-F0-9])([a-fA-F0-9])$/);
+      if (hex3Match) {
+        return {
+          r: parseInt(hex3Match[1] + hex3Match[1], 16),
+          g: parseInt(hex3Match[2] + hex3Match[2], 16),
+          b: parseInt(hex3Match[3] + hex3Match[3], 16)
+        };
+      }
+      
+      return null;
+    }
+    
+    // Calculate relative luminance (WCAG formula)
+    function getLuminance(rgb) {
+      if (!rgb) return 0.5; // Default to middle
+      
+      var r = rgb.r / 255;
+      var g = rgb.g / 255;
+      var b = rgb.b / 255;
+      
+      // Apply gamma correction
+      r = r <= 0.03928 ? r / 12.92 : Math.pow((r + 0.055) / 1.055, 2.4);
+      g = g <= 0.03928 ? g / 12.92 : Math.pow((g + 0.055) / 1.055, 2.4);
+      b = b <= 0.03928 ? b / 12.92 : Math.pow((b + 0.055) / 1.055, 2.4);
+      
+      return 0.2126 * r + 0.7152 * g + 0.0722 * b;
+    }
+    
+    // Get the effective background color
+    var bgColor = getEffectiveBackgroundColor(navbar);
+    var rgb = parseColor(bgColor);
+    var luminance = getLuminance(rgb);
+    
+    // Threshold: 0.5 is middle, lower = darker background
+    // Use 0.4 as threshold for better contrast
+    var isLightBackground = luminance > 0.4;
+    
+    // Set icon color based on background
+    // Light background = dark icon (#1a1a1a)
+    // Dark background = light icon (#F3FAFF)
+    var iconColor = isLightBackground ? '#1a1a1a' : '#F3FAFF';
+    
+    svg.style.fill = iconColor;
+    switcher.style.color = iconColor;
+    
+    console.log('[i18n] Language switcher icon color:', iconColor, 
+                '(bg luminance:', luminance.toFixed(2), 
+                ', isLight:', isLightBackground, ')');
+  }
+  
+  // Initialize on DOM ready
+  function init() {
+    updateContent();
+    updateDirection();
+    initLanguageSwitcher();
+    createMobileLangMenu();
+    initMobileLangSwitcher();
+    fixMobileMenuStyles();
+    fixMobileButtonPositioning();
+    fixLanguageSwitcherColor();
+    
+    // Also fix on resize (in case user rotates device)
+    window.addEventListener('resize', function() {
+      if (window.innerWidth > 768) {
+        // Desktop: remove mobile lang menu if it exists
+        var mobileLangEl = document.querySelector('.mobile-lang-menu');
+        if (mobileLangEl) mobileLangEl.remove();
+        var mobileCssEl = document.getElementById('mobile-lang-menu-css');
+        if (mobileCssEl) mobileCssEl.remove();
+      } else {
+        createMobileLangMenu();
+        initMobileLangSwitcher();
+      }
+      fixMobileMenuStyles();
+      fixMobileButtonPositioning();
+      fixLanguageSwitcherColor();
+    });
+    
+    // Re-check color after a delay to catch dynamically loaded backgrounds
+    setTimeout(fixLanguageSwitcherColor, 500);
+    setTimeout(fixLanguageSwitcherColor, 1500);
+  }
+  
+  // Expose to global scope
+  window.zappyI18n = zappyI18n;
+  
+  // Run initialization
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+  <a href="https://wa.me/[whatsapp_handle]" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
 
     <script src="/script.js"></script>
 
